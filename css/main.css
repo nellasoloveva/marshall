@@ -1,0 +1,7081 @@
+body{
+    margin: 0px;
+    background-color: #2a292a;
+}
+@media screen and (min-width: 1280px) and (max-width: 1600px){
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 60px;
+    height: 120px;
+    position: relative; /* Для позиционирования псевдоэлемента */
+    overflow: hidden; /* Чтобы скрыть выходящий за пределы элемент */
+}
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%; /* Начальное положение за пределами контейнера */
+  width: 100%;
+  height: 100%;
+  background-color: black; /* Цвет фона */
+  transition: left 0.5s ease; /* Плавный переход */
+}
+.none{
+  display: none;
+}
+.header.active::before {
+  left: 0; /* Перемещение в видимую область */
+}
+a {
+  color: inherit; /* Цвет ссылок становится таким же, как цвет родительского элемента */
+  text-decoration: none; /* Убираем подчёркивание */
+  background-color: transparent; /* Фон прозрачный, чтобы не выделяться */
+  cursor: pointer; /* Оставляем указатель, чтобы было понятно, что ссылка кликабельна */
+}
+.upArrow{
+  height: 50px;
+}
+.upArrowDiv{
+  position: sticky;
+  top: 20px;
+  margin-right: 20px;
+  display: none;
+  cursor: pointer;
+  z-index: 3;
+}
+.activeMenu{
+  z-index: 2;
+  color: white;
+  display: flex;
+}
+.about{
+  margin-right: 40px;
+  font-family: bebra;
+  font-size: 64px;
+  cursor: pointer;
+}
+.about:hover{
+  color: black;
+  text-shadow: 1px 0 1px white, 
+0 1px 1px white, 
+-1px 0 1px white, 
+0 -1px 1px white;
+}
+.marshLogo{
+    width: 40%;
+    margin-top: 15px;
+}
+.menuSvg{
+    width: 40px;
+}
+.menuDiv{
+    width: 40px;
+    cursor: pointer;
+    z-index: 2;
+}
+.aa{
+    width: 100%;
+}
+@font-face {
+	font-family: 'bebra'; 
+	src: url(../fonts/BebasNeue-Regular.ttf); 
+}
+.wel{
+    font-family: bebra;
+    margin-top: 90px;
+    font-size: 128px;
+    color: white;
+    width: 50%;
+    margin-left: 80px;
+}
+.r{
+    width: 400px;
+}
+.rr{
+    display: flex;
+    justify-content: right;
+    margin-right: 80px;
+}
+.tt{
+    display: flex;
+    justify-content:center;
+    color: white;
+    font-family: bebra;
+    font-size: 40px;
+}
+.t{
+    width: 900px;
+    text-align: center;
+    margin: 100px 0px 100px 0px;
+}
+.flex1{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 80px 100px 80px;
+}
+.rrr{
+    color: white;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 20px;
+    width: 270px;
+    line-height: 1.5;
+}
+  .items-wrap {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+  }
+  .items {
+    flex-shrink: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .item {
+    width: 400px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: all 0.1s ease-in-out;
+    font-family: bebra;
+    font-size: 64px;
+  }
+  .marquee {
+    animation: scroll 40s linear infinite;
+  }
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+hr{
+    color: white;
+    width: 100%;
+}
+.grid1{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 350px 350px;
+  margin: 100px 80px 100px 80px;
+}
+.sold{
+  grid-column: 2/6;
+  background-color: #403f3f;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.rev{
+  grid-column: 6/8;
+  background-color: #403f3f;
+  margin-bottom: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+}
+.emp{
+  grid-column: 1/3;
+  background-color: #403f3f;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+}
+.n2{
+  grid-column: 3/5;
+}
+.artist{
+  grid-column: 5/7;
+  background-color: #403f3f;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+}
+.numSold{
+  font-family: bebra;
+  font-size: 128px;
+  color: white;
+  margin-left: 20px;
+}
+.txtSold{
+  color: white;
+  margin-left: 20px;
+  font-family: bebra;
+  font-size: 40px;
+}
+.i {
+  position: relative;
+  overflow: hidden; /* Скрыть все, что выходит за пределы контейнера */
+  margin-bottom: 100px;
+}
+.aaa {
+  width: 100%;
+  z-index: -1;
+}
+.text-container {
+  height: 0px; /* Высота контейнера, подберите по своему усмотрению */
+  overflow: hidden; /* Скрыть тексты, которые выходят за пределы */
+  /* Установить относительное позиционирование для контейнера текста */
+  z-index: 1;
+}
+.text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100%; /* Начальное положение за пределами видимости */
+  opacity: 0; /* Начальная прозрачность */
+  animation: slideIn 13s infinite; /* Анимация */
+  font-family: bebra;
+  font-size: 290px;
+  color: white;
+}
+@keyframes slideIn {
+  0%, 33% {
+      top: 100%; /* Текст вне видимости */
+      opacity: 0; /* Прозрачный */
+  }
+  10%, 23% {
+      top: 20%; /* Показать текст (центрируем с учетом высоты текста) */
+      opacity: 1; /* Полная видимость */
+  }
+  30%, 100% {
+      top: -100%; /* Текст снова вне видимости */
+      opacity: 0; /* Прозрачный */
+  }
+}
+.text:nth-child(1) {
+  animation-delay: 0s; /* Первый текст появляется сразу */
+}
+.text:nth-child(2) {
+  animation-delay: 3s; /* Второй текст появляется через 3 секунды */
+  display: flex;
+  justify-content: right;
+}
+.text:nth-child(3) {
+  animation-delay: 6s; /* Третий текст появляется через 6 секунд */
+}
+.text:nth-child(4) {
+  animation-delay: 9s; /* Четвертый текст появляется через 9 секунд */
+  display: flex;
+  justify-content: center;
+}
+.grid2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 80px;
+}
+.headPhoto{
+  width: 100%;
+}
+.headphones{
+  position: relative;
+}
+.headTxt{
+  position: absolute;
+  background-color: black;
+  font-family: bebra;
+  color: white;
+  font-size: 64px;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  cursor: pointer;
+}
+.hheadTxt{
+  position: absolute;
+  background-color: black;
+  font-family: bebra;
+  color: white;
+  font-size: 64px;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  cursor: pointer;
+}
+.headTxt:hover{
+  background-color: white;
+  color: black;
+}
+.hheadTxt:hover{
+  background-color: white;
+  color: black;
+}
+.hisPhoto1Div{
+  display: flex;
+  justify-content:end;
+  margin-right: 80px;
+  opacity: 0;
+  transform: translateY(160px);
+}
+.hisPhoto1Div.element-show {
+  opacity: 1;
+  transition: all 1s;
+  transform: translateY(0%);
+}
+.hisPhoto1{
+  width: 300px;
+}
+.block1{
+  position: relative;
+  display: flex;
+  flex-direction: column; 
+  min-height: 120vh;
+  opacity: 0;
+  transform: translateY(160px);
+}
+.block1.element-show {
+  opacity: 1;
+  transition: all 1s;
+  transform: translateY(0%);
+}
+.block2{
+  position: relative;
+  display: flex;
+  flex-direction: column; 
+  min-height: 105vh;
+  opacity: 0;
+  transform: translateY(160px);
+}
+.block2.element-show {
+  opacity: 1;
+  transition: all 1s;
+  transform: translateY(0%);
+}
+.hisphoto6Div{
+  opacity: 0;
+  transform: translateY(160px);
+}
+.hisphoto6Div.element-show {
+  opacity: 1;
+  transition: all 1s;
+  transform: translateY(0%);
+}
+.block3{
+  position: relative;
+  display: flex;
+  flex-direction: column; 
+  min-height: 100vh;
+  opacity: 0;
+  transform: translateY(160px);
+}
+.block3.element-show {
+  opacity: 1;
+  transition: all 1s;
+  transform: translateY(0%);
+}
+.hisphoto9Div{
+  opacity: 0;
+  transform: translateY(160px);
+}
+.hisphoto9Div.element-show {
+  opacity: 1;
+  transition: all 1s;
+  transform: translateY(0%);
+}
+.hisphoto2Div{
+  position: absolute;
+  left: 80px;
+}
+.hisphoto3Div{
+  position: absolute;
+  right: 18%;
+  top: 220px;
+}
+.hisPhoto3Txt{
+  width: 290px;
+  text-align: justify;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.hisPhoto2Txt{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  width: 60%;
+  line-height: 1.5;
+}
+.hisPhoto2, .hisPhoto3, .hisPhoto4, .hisPhoto5, .hisPhoto7{
+  margin-bottom: 20px;
+}
+.hisPhoto3h, .hisPhoto4h, .hisPhoto6h{
+  color: white;
+  font-family: bebra;
+  font-size: 40px;
+}
+.hisphoto4Div{
+  position: absolute;
+  left: 20%;
+}
+.hisPhoto4Txt{
+  width: 390px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: justify;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.hisphoto5Div{
+  position: absolute;
+  right: 80px;
+  top: 300px;
+}
+.hisPhoto5Txt{
+  width: 290px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.5;
+}
+.photoBigDiv6{
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.pp{
+  margin-right: 20px;
+}
+.hisphoto6Div{
+  margin-left: 80px;
+}
+.hisPhoto6Txt{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.5;
+  width: 400px;
+}
+.hisphoto7Div{
+  position: absolute;
+  right: 80px;
+}
+.hisPhoto7Txt{
+  width: 300px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.5;
+}
+.hisphoto8Div{
+  position: absolute;
+  left: 80px;
+  top: 100px;
+  display: flex;
+  align-items: flex-end;
+  text-align: justify;
+  right: 80px;
+}
+.pppp{
+  margin-right: 20px;
+}
+.hisPhoto8Txt{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.5;
+}
+.hisphoto9Div{
+  position: absolute;
+  left: 80px;
+  right: 80px;
+}
+.hisPhoto9{
+  width: 100%;
+}
+.hisPhoto{
+  margin-bottom: 600px;
+}
+.star{
+  height: 15px;
+  margin-left: 15px;
+}
+.strLeft{
+  height: 30px;
+  cursor: pointer;
+}
+.strRight{
+  height: 30px;
+  cursor: pointer;
+  transform: rotate(3.142rad);
+}
+.revTop{
+  display: flex;
+  justify-content: space-between;
+  font-family: bebra;
+  color: white;
+  font-size: 40px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.reviews{
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 200px;
+}
+.revStar{
+  display: flex;
+  align-items: center;
+}
+.revText{
+  font-family: bebra;
+  color: white;
+  font-size: 40px;
+  text-align:justify;
+  margin-bottom: 30px;
+  height: 250px;
+}
+.revBottom{
+  display: flex;
+  font-family: bebra;
+  color: white;
+  font-size: 40px;
+  justify-content: center;
+}
+.num{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.rightArrow{
+  height: 30px;
+}
+.subscribe{
+  margin-top: 150px;
+}
+.subTxt1, .subTxt2, .subTxt3{
+  font-family: bebra;
+  font-size: 128px;
+  color: white;
+}
+.subTxt1{
+  margin-left: 80px;
+}
+.subTxt2{
+  margin-left: 80px;
+}
+.subTxt3{
+  margin-left: 300px;
+}
+.subForm{
+  display: flex;
+  margin-left: 20%;
+  justify-content: space-between;
+  margin-right: 80px;
+  align-items: end;
+  margin-bottom: 150px;
+}
+.www{
+  display: flex;
+}
+.subInp{
+  width: 500px;
+  height: 50px;
+  background-color: #403f3f;
+  border-width: 0px;
+  padding-top: 5px;
+  padding-left: 20px;
+  color: white; 
+  font-family: bebra;
+  font-size: 40px;
+}
+.subInp::placeholder {
+  color: white; 
+  font-family: bebra;
+  font-size: 40px;
+}
+.subInp::-webkit-input-placeholder {
+  color: white; 
+  font-family: bebra;
+  font-size: 40px;
+}
+.subInp::-moz-placeholder {
+  color: white;
+  font-size: 40px;
+  font-family: bebra; 
+}
+.subInp:-ms-input-placeholder {
+  color: white; 
+  font-family: bebra;
+  font-size: 40px;
+}
+.rightArrowDiv{
+  height: 55px;
+  width: 55px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.subEnterTxt{
+  margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  width: 200px;
+  line-height: 1.5;
+}
+input:focus {
+    outline: none;
+}
+.footer{
+  background-color: black;
+  color: white;
+  padding-top: 150px;
+}
+.footTop{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 100px;
+}
+.footLeft{
+  font-family: bebra;
+  color: white;
+  font-size: 128px;
+}
+.support, .footNum{
+  font-family: bebra;
+  color: white;
+  font-size: 64px;
+}
+.footNum{
+  margin-bottom: 60px;
+}
+.footTxt{
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  line-height: 1.5;
+}
+.hours{
+  display: flex;
+  margin-top: 30px;
+}
+.hoursLeft{
+  margin-right: 10%;
+}
+.budni{
+  margin-bottom: 10px;
+}
+.flex2{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 80px;
+}
+.flex2right{
+  display: flex;
+  align-items: center;
+}
+.marshLogoFlex{
+  width: 30%;
+}
+.kaakshki{
+  margin-left: 100px;
+}
+.footTxtt{
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+
+/* PRODUCTS--------------------------------------------*/
+
+
+/*HEADPHONES-----------------------------------------------------------*/
+
+.headerProductsHeadphones{
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-family: bebra;
+  font-size: 64px;
+}
+.headDiv, .speakersDiv, .ampsDiv{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+}
+.speakersDiv, .ampsDiv{
+  background-color: black;
+}
+.speakersDiv:hover{
+  font-size: 60px;
+}
+.ampsDiv:hover{
+  font-size: 60px;
+}
+.categoriesHeadphones{
+  display: flex;
+  justify-content: flex-start;
+  color: white;
+  font-family: bebra;
+  font-size: 36px;
+  margin-top: 30px;
+  margin-left: 70px;
+  margin-bottom: 30px;
+}
+.cat{
+  margin-right: 30px;
+  cursor: pointer;
+}
+.catCheck{
+  margin-right: 30px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.gridHeadphones{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+.gridHBlock3{
+  grid-column: 3/5;
+  grid-row: 1/3;
+}
+.block1Img, .block2Img, .block3Img{
+  width: 100%;
+}
+.gridHBlock1, .gridHBlock2, .gridHBlock3{
+  margin: 5px;
+}
+.blockTxtBig{
+  color: white;
+  font-family: bebra;
+  font-size: 40px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.blockTxtSmall{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.grid2Headphones{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.grid2Block1Img{
+  width: 100%;
+}
+.grid2Block1ImgDiv{
+  margin: 5px;
+}
+.txtBottom{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-left: 80px;
+  width: 50%;
+  text-align: justify;
+  margin-bottom: 80px;
+}
+
+/*SPeakers----------------------------------------------------------------------------*/
+
+.grid2Speakers{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.grid2Block1S{
+  grid-column: 1/3;
+  grid-row: 1/3;
+}
+
+
+/*CARDS----------------------------------------------------------*/
+
+.h1{
+  font-family: bebra;
+  color: white;
+  font-size: 128px;
+  margin-left: 80px;
+}
+.glavPhotoDiv{
+  display: flex;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 40px;
+}
+.glavPhoto{
+  width: 100%;
+}
+.firstTxtBlock{
+  margin-left: 80px;
+}
+.hTxt{
+  color: white;
+  font-family: bebra;
+  font-size: 40px;
+}
+.mTxt{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  width: 40%;
+}
+.cardGrid{
+  position: relative;
+  height: 2600px;
+}
+.bl1, .bl2, .bl3, .bl4, .bl5{
+ width: 450px;
+ position: absolute;
+}
+.photo{
+ width: 100%;
+}
+.hh{
+  color: white;
+  font-family: bebra;
+  font-size: 40px;
+}
+.txt{
+  font-size: 16px;
+  line-height: 1.5;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
+}
+.bl1{
+  right: 10%;
+  top: 80px;
+}
+.bl2{
+  left: 80px;
+  top: 400px;
+}
+.bl3{
+  right: 5%;
+  top: 900px;
+}
+.bl4{
+  left: 15%;
+  top: 1500px;
+}
+.bl5{
+  right: 15%;
+  top: 1900px;
+}
+.Pl{
+  height: 15px;
+  cursor: pointer;
+}
+.str{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.productDetails{
+  margin-left: 20%;
+  margin-right: 80px;
+  margin-bottom: 80px;
+}
+.lStr{
+  color: white;
+  font-family: bebra;
+  font-size: 36px;
+}
+.buyGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50px 1fr;
+  margin-left: 20%;
+  margin-right: 80px;
+  margin-bottom: 80px;
+  height: 300px;
+}
+.strDiv{
+  height: 50px;
+}
+.strQ{
+  width: 50px;
+}
+.usa{
+  height: 50px;
+  background-color: #403f3f;
+  border-width: 0px;
+  padding-left: 20px;
+  color: white; 
+  font-family: bebra;
+  font-size: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+}
+.qwe{
+  color: white; 
+  font-family: bebra;
+  font-size: 40px;
+  text-decoration: underline;
+}
+.sstr{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.infoDiv{
+  text-align: end;
+  justify-content: end;
+  margin-right: 80px;
+  height: 0; /* Начальное значение для скрытого состояния */
+  opacity: 0; /* Начальная непрозрачность */
+  overflow: hidden; /* Скрытие переполнения */
+  transition: height 0.5s ease, opacity 0.5s ease; /* Переходы для height и opacity */
+}
+.infoDiv.show {
+  height: auto; /* Высота при показе (должна быть фиксированной или заданной) */
+  opacity: 1; /* Полная непрозрачность */
+}
+.infA{
+  font-size: 16px;
+  line-height: 1.5;
+  color: #737272;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.infB{
+  color: white; 
+  font-family: bebra;
+  font-size: 27px;
+  margin-bottom: 15px;
+}
+.infoCol1{
+  margin-right: 30px;
+}
+.strDiv{
+  cursor: pointer;
+}
+.spisok{
+  background-color: #737272;
+  color: black;
+  margin-right: 10px;
+}
+.qw{
+  font-family: bebra;
+  font-size: 40px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+.qw:hover{
+  background-color: #2a292a;
+}
+.botLeft, .botRight{
+  margin-top: 30px;
+}
+.ppp{
+  display: flex;
+  justify-content: space-between;
+  margin: 80px;
+}
+.hz{
+  width: 95%;
+}
+
+/*SIGN------------------------------------------------------------*/
+
+.spider{
+  width: 100%;
+  height: 98vh;
+}
+.spiderDiv{
+  position: relative;
+}
+.sign{
+  background-color: #403f3f;
+  height: 70vh;
+  width: 55%;
+  position: absolute;
+  top: 15vh;
+  left: 22%;
+  border-radius: 35px;
+  display: flex;
+  padding: 15px 0 15px 15px;
+}
+.aaaw{
+  position: relative;
+}
+.signLeft{
+  height: 100%;
+  border-radius: 35px;
+}
+.signRightDiv{
+  width: 100%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+.sTxt{
+  color: white; 
+  font-family: bebra;
+  font-size: 50px;
+  margin-top: 4vh;
+}
+.siTxt{
+  font-size: 16px;
+  line-height: 1.5;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  margin-bottom: 2vh;
+}
+.siTxt:hover{
+  text-decoration: underline;
+  color: #220767;
+}    
+.signGrid{
+  display: flex;
+}
+.signEmail{
+  width: 100%;
+  margin-top: 10px;
+}         
+.signPass{
+  width: 100%;
+  margin-top: 10px;
+}
+.signName{
+  margin-right: 10px;
+}
+.signInput{
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #2a292a;
+  border-width: 0px;
+  padding: 0;
+  padding-left: 10px;
+  padding-top: 3px;
+  color: white; 
+  font-family: bebra;
+  font-size: 30px;
+}
+.signInput::placeholder {
+  color: rgb(149, 146, 146); 
+  font-family: bebra;
+  font-size: 30px;
+}
+.signInput::-webkit-input-placeholder {
+  color: rgb(149, 146, 146); 
+  font-family: bebra;
+  font-size: 30px;
+}
+.signInput::-moz-placeholder {
+  color: rgb(149, 146, 146);
+  font-size: 30px;
+  font-family: bebra; 
+}
+.signInput:-ms-input-placeholder {
+  color: rgb(149, 146, 146); 
+  font-family: bebra;
+  font-size: 30px;
+}
+.ok{
+  display: flex;
+  font-size: 16px;
+  line-height: 1.5;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 3vh;
+  margin-bottom: 4vh;
+}
+.chch{
+  accent-color: #2a292a;
+}
+.check{
+  margin-right: 10px;
+}
+.create{
+  width: 100%;
+  background-color: #737272;
+  cursor: pointer;
+  color: white; 
+  font-family: bebra;
+  font-size: 50px;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+}
+@media screen and (min-width: 1024px) and (max-width: 1279px){
+  .header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 60px;
+      height: 120px;
+      position: relative; /* Для позиционирования псевдоэлемента */
+      overflow: hidden; /* Чтобы скрыть выходящий за пределы элемент */
+  }
+  .header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%; /* Начальное положение за пределами контейнера */
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Цвет фона */
+    transition: left 0.5s ease; /* Плавный переход */
+  }
+  .none{
+    display: none;
+  }
+  .header.active::before {
+    left: 0; /* Перемещение в видимую область */
+  }
+  a {
+    color: inherit; /* Цвет ссылок становится таким же, как цвет родительского элемента */
+    text-decoration: none; /* Убираем подчёркивание */
+    background-color: transparent; /* Фон прозрачный, чтобы не выделяться */
+    cursor: pointer; /* Оставляем указатель, чтобы было понятно, что ссылка кликабельна */
+  }
+  .upArrow{
+    height: 50px;
+  }
+  .upArrowDiv{
+    position: sticky;
+    top: 20px;
+    margin-right: 20px;
+    display: none;
+    cursor: pointer;
+    z-index: 3;
+  }
+  .activeMenu{
+    z-index: 2;
+    color: white;
+    display: flex;
+  }
+  .about{
+    margin-right: 40px;
+    font-family: bebra;
+    font-size: 50px;
+    cursor: pointer;
+  }
+  .about:hover{
+    color: black;
+    text-shadow: 1px 0 1px white, 
+  0 1px 1px white, 
+  -1px 0 1px white, 
+  0 -1px 1px white;
+  }
+  .marshLogo{
+      width: 40%;
+      margin-top: 15px;
+  }
+  .menuSvg{
+      width: 40px;
+  }
+  .menuDiv{
+      width: 40px;
+      cursor: pointer;
+      z-index: 2;
+  }
+  .aa{
+      width: 100%;
+  }
+  @font-face {
+    font-family: 'bebra'; 
+    src: url(../fonts/BebasNeue-Regular.ttf); 
+  }
+  .wel{
+      font-family: bebra;
+      margin-top: 90px;
+      font-size: 80px;
+      color: white;
+      width: 50%;
+      margin-left: 80px;
+  }
+  .r{
+      width: 400px;
+  }
+  .rr{
+      display: flex;
+      justify-content: right;
+      margin-right: 80px;
+  }
+  .tt{
+      display: flex;
+      justify-content:center;
+      color: white;
+      font-family: bebra;
+      font-size: 40px;
+  }
+  .t{
+      width: 900px;
+      text-align: center;
+      margin: 100px 0px 100px 0px;
+  }
+  .flex1{
+      display: flex;
+      justify-content: space-between;
+      margin: 0px 80px 100px 80px;
+  }
+  .lll{
+    width: 60%;
+  }
+  .llll{
+    width: 100%;
+  }
+  .rrr{
+      color: white;
+      text-align: justify;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 20px;
+      width: 270px;
+      line-height: 1.5;
+  }
+  
+    .items-wrap {
+      position: relative;
+      display: flex;
+      overflow: hidden;
+    }
+  
+    .items {
+      flex-shrink: 0;
+      display: flex;
+      gap: 20px;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .item {
+      width: 400px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      transition: all 0.1s ease-in-out;
+      font-family: bebra;
+      font-size: 64px;
+    }
+    .marquee {
+      animation: scroll 40s linear infinite;
+    }
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  hr{
+      color: white;
+      width: 100%;
+  }
+  .grid1{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 280px 280px;
+    margin: 100px 80px 100px 80px;
+  }
+  .sold{
+    grid-column: 2/6;
+    background-color: #403f3f;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .rev{
+    grid-column: 6/8;
+    background-color: #403f3f;
+    margin-bottom: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+  }
+  .emp{
+    grid-column: 1/3;
+    background-color: #403f3f;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+  }
+  .n2{
+    grid-column: 3/5;
+  }
+  .artist{
+    grid-column: 5/7;
+    background-color: #403f3f;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+  }
+  .numSold{
+    font-family: bebra;
+    font-size: 100px;
+    color: white;
+    margin-left: 20px;
+  }
+  .txtSold{
+    color: white;
+    margin-left: 20px;
+    font-family: bebra;
+    font-size: 35px;
+  }
+  .i {
+    position: relative;
+    overflow: hidden; /* Скрыть все, что выходит за пределы контейнера */
+    margin-bottom: 100px;
+  }
+  .aaa {
+    width: 100%;
+    z-index: -1;
+  }
+  .text-container {
+    height: 0px; /* Высота контейнера, подберите по своему усмотрению */
+    overflow: hidden; /* Скрыть тексты, которые выходят за пределы */
+    /* Установить относительное позиционирование для контейнера текста */
+    z-index: 1;
+  }
+  .text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 100%; /* Начальное положение за пределами видимости */
+    opacity: 0; /* Начальная прозрачность */
+    animation: slideIn 13s infinite; /* Анимация */
+    font-family: bebra;
+    font-size: 200px;
+    color: white;
+  }
+  /* Определяем ключевые кадры для анимации */
+  @keyframes slideIn {
+    0%, 33% {
+        top: 100%; /* Текст вне видимости */
+        opacity: 0; /* Прозрачный */
+    }
+    10%, 23% {
+        top: 25%; /* Показать текст (центрируем с учетом высоты текста) */
+        opacity: 1; /* Полная видимость */
+    }
+    30%, 100% {
+        top: -100%; /* Текст снова вне видимости */
+        opacity: 0; /* Прозрачный */
+    }
+  }
+  /* Добавляем задержку для каждого текста */
+  .text:nth-child(1) {
+    animation-delay: 0s; /* Первый текст появляется сразу */
+  }
+  .text:nth-child(2) {
+    animation-delay: 3s; /* Второй текст появляется через 3 секунды */
+    display: flex;
+    justify-content: right;
+  }
+  .text:nth-child(3) {
+    animation-delay: 6s; /* Третий текст появляется через 6 секунд */
+  }
+  .text:nth-child(4) {
+    animation-delay: 9s; /* Четвертый текст появляется через 9 секунд */
+    display: flex;
+    justify-content: center;
+  }
+  .grid2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 80px;
+    margin-top: 5vh;
+  }
+  .headPhoto{
+    width: 100%;
+  }
+  .headphones{
+    position: relative;
+  }
+  .headTxt{
+    position: absolute;
+    background-color: black;
+    font-family: bebra;
+    color: white;
+    font-size: 64px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    cursor: pointer;
+  }
+  .hheadTxt{
+    position: absolute;
+    background-color: black;
+    font-family: bebra;
+    color: white;
+    font-size: 64px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    cursor: pointer;
+  }
+  .headTxt:hover{
+    background-color: white;
+    color: black;
+  }
+  .hisPhoto1Div{
+    display: flex;
+    justify-content:end;
+    margin-right: 80px;
+    opacity: 0;
+    transform: translateY(160px);
+  }
+  .hisPhoto1Div.element-show {
+    opacity: 1;
+    transition: all 1s;
+    transform: translateY(0%);
+  }
+  .hisPhoto1{
+    width: 300px;
+  }
+  .block1{
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    min-height: 145vh;
+    opacity: 0;
+    transform: translateY(160px);
+  }
+  .block1.element-show {
+    opacity: 1;
+    transition: all 1s;
+    transform: translateY(0%);
+  }
+  .block2{
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    min-height: 125vh;
+    opacity: 0;
+    transform: translateY(160px);
+  }
+  .block2.element-show {
+    opacity: 1;
+    transition: all 1s;
+    transform: translateY(0%);
+  }
+  .hisphoto6Div{
+    opacity: 0;
+    transform: translateY(160px);
+  }
+  .hisphoto6Div.element-show {
+    opacity: 1;
+    transition: all 1s;
+    transform: translateY(0%);
+  }
+  .block3{
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    min-height: 120vh;
+    opacity: 0;
+    transform: translateY(160px);
+  }
+  .block3.element-show {
+    opacity: 1;
+    transition: all 1s;
+    transform: translateY(0%);
+  }
+  .hisphoto9Div{
+    opacity: 0;
+    transform: translateY(160px);
+  }
+  .hisphoto9Div.element-show {
+    opacity: 1;
+    transition: all 1s;
+    transform: translateY(0%);
+  }
+  .hisphoto2Div{
+    position: absolute;
+    left: 80px;
+    width: 50%;
+  }
+  .hisPhoto2{
+    width: 100%;
+  }
+  .hisphoto3Div{
+    position: absolute;
+    right: 8%;
+    top: 220px;
+  }
+  .hisPhoto3Txt{
+    width: 290px;
+    text-align: justify;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .hisPhoto2Txt{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    width: 100%;
+    line-height: 1.5;
+  }
+  .hisPhoto2, .hisPhoto3, .hisPhoto4, .hisPhoto5, .hisPhoto7{
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .hisPhoto3h, .hisPhoto4h, .hisPhoto6h{
+    color: white;
+    font-family: bebra;
+    font-size: 40px;
+  }
+  .hisphoto4Div{
+    position: absolute;
+    left: 10%;
+  }
+  .hisPhoto4Txt{
+    width: 390px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: justify;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  .hisphoto5Div{
+    position: absolute;
+    right: 80px;
+    top: 300px;
+  }
+  .hisPhoto5Txt{
+    width: 290px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.5;
+  }
+  .photoBigDiv6{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .pp{
+    margin-right: 20px;
+  }
+  .hisphoto6Div{
+    margin-left: 80px;
+  }
+  .hisPhoto6Txt{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.5;
+    width: 400px;
+  }
+  .hisphoto7Div{
+    position: absolute;
+    right: 80px;
+  }
+  .hisPhoto7Txt{
+    width: 300px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.5;
+  }
+  .hisphoto8Div{
+    position: absolute;
+    left: 80px;
+    top: 50vh;
+    display: flex;
+    align-items: flex-end;
+    text-align: justify;
+    right: 80px;
+  }
+  .hisPhoto8{
+    width: 500px;
+  }
+  .ppp{
+    margin-right: 20px;
+  }
+  .pppp{
+    width: 500px;
+    margin-right: 10px;
+  }
+  .hisPhoto8Txt{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.5;
+  }
+  .hisphoto9Div{
+    position: absolute;
+    left: 80px;
+    right: 80px;
+  }
+  .hisPhoto9{
+    width: 100%;
+  }
+  .hisPhoto{
+    margin-bottom: 70vh;
+  }
+  .star{
+    height: 15px;
+    margin-left: 15px;
+  }
+  .strLeft{
+    height: 30px;
+    cursor: pointer;
+  }
+  .strRight{
+    height: 30px;
+    cursor: pointer;
+    transform: rotate(3.142rad);
+  }
+  .revTop{
+    display: flex;
+    justify-content: space-between;
+    font-family: bebra;
+    color: white;
+    font-size: 40px;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .reviews{
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 80px;
+  }
+  .revStar{
+    display: flex;
+    align-items: center;
+  }
+  .revText{
+    font-family: bebra;
+    color: white;
+    font-size: 35px;
+    text-align:justify;
+    margin-bottom: 30px;
+    height: 40vh;
+  }
+  .revBottom{
+    display: flex;
+    font-family: bebra;
+    color: white;
+    font-size: 40px;
+    justify-content: center;
+  }
+  .num{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .rightArrow{
+    height: 30px;
+  }
+  .subscribe{
+    margin-top: 150px;
+  }
+  .subTxt1, .subTxt2, .subTxt3{
+    font-family: bebra;
+    font-size: 80px;
+    color: white;
+  }
+  .subTxt1{
+    margin-left: 80px;
+  }
+  .subTxt2{
+    margin-left: 80px;
+  }
+  .subTxt3{
+    margin-left: 300px;
+  }
+  .subForm{
+    display: flex;
+    margin-left: 10%;
+    justify-content: space-between;
+    margin-right: 80px;
+    align-items: end;
+    margin-bottom: 150px;
+  }
+  .www{
+    display: flex;
+  }
+  .subInp{
+    width: 90%;
+    height: 50px;
+    background-color: #403f3f;
+    border-width: 0px;
+    padding-top: 5px;
+    padding-left: 20px;
+    color: white; 
+    font-family: bebra;
+    font-size: 40px;
+  }
+  .subInp::placeholder {
+    color: white; 
+    font-family: bebra;
+    font-size: 40px;
+  }
+  .subInp::-webkit-input-placeholder {
+    color: white; 
+    font-family: bebra;
+    font-size: 40px;
+  }
+  .subInp::-moz-placeholder {
+    color: white;
+    font-size: 40px;
+    font-family: bebra; 
+  }
+  .subInp:-ms-input-placeholder {
+    color: white; 
+    font-family: bebra;
+    font-size: 40px;
+  }
+  .rightArrowDiv{
+    height: 55px;
+    width: 55px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .subEnterTxt{
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    width: 200px;
+    line-height: 1.5;
+  }
+  input:focus {
+      outline: none;
+  }
+  .footer{
+    background-color: black;
+    color: white;
+    padding-top: 150px;
+  }
+  .footTop{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 100px;
+  }
+  .footLeft{
+    font-family: bebra;
+    color: white;
+    font-size: 100px;
+  }
+  .support, .footNum{
+    font-family: bebra;
+    color: white;
+    font-size: 40px;
+  }
+  .footNum{
+    margin-bottom: 60px;
+  }
+  .footTxt{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+  .hours{
+    display: flex;
+    margin-top: 30px;
+  }
+  .hoursLeft{
+    margin-right: 10%;
+  }
+  .budni{
+    margin-bottom: 10px;
+  }
+  .flex2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 80px;
+  }
+  .flex2right{
+    display: flex;
+    align-items: center;
+  }
+  .marshLogoFlex{
+    width: 30%;
+  }
+  .kaakshki{
+    margin-left: 100px;
+  }
+  .footTxtt{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  
+  /* PRODUCTS--------------------------------------------*/
+  
+  /*HEADPHONES-----------------------------------------------------------*/
+  
+  .headerProductsHeadphones{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-family: bebra;
+    font-size: 64px;
+  }
+  .headDiv, .speakersDiv, .ampsDiv{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    cursor: pointer;
+  }
+  .speakersDiv, .ampsDiv{
+    background-color: black;
+  }
+  .speakersDiv:hover{
+    font-size: 60px;
+  }
+  .ampsDiv:hover{
+    font-size: 60px;
+  }
+  .categoriesHeadphones{
+    display: flex;
+    justify-content: flex-start;
+    color: white;
+    font-family: bebra;
+    font-size: 36px;
+    margin-top: 30px;
+    margin-left: 70px;
+    margin-bottom: 30px;
+  }
+  .cat{
+    margin-right: 30px;
+    cursor: pointer;
+  }
+  .catCheck{
+    margin-right: 30px;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .gridHeadphones{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+  .gridHBlock3{
+    grid-column: 3/5;
+    grid-row: 1/3;
+  }
+  .block1Img, .block2Img, .block3Img{
+    width: 100%;
+  }
+  .gridHBlock1, .gridHBlock2, .gridHBlock3{
+    margin: 5px;
+  }
+  .blockTxtBig{
+    color: white;
+    font-family: bebra;
+    font-size: 40px;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  .blockTxtSmall{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .grid2Headphones{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  .grid2Block1Img{
+    width: 100%;
+    
+  }
+  .grid2Block1ImgDiv{
+    margin: 5px;
+  }
+  .txtBottom{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-left: 80px;
+    width: 50%;
+    text-align: justify;
+    margin-bottom: 80px;
+  }
+  
+  /*SPeakers----------------------------------------------------------------------------*/
+  
+  .grid2Speakers{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  .grid2Block1S{
+    grid-column: 1/3;
+    grid-row: 1/3;
+  }
+  
+  /*CARDS----------------------------------------------------------*/
+  
+  .h1{
+    font-family: bebra;
+    color: white;
+    font-size: 100px;
+    margin-left: 80px;
+  }
+  .glavPhotoDiv{
+    display: flex;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 40px;
+  }
+  .glavPhoto{
+    width: 100%;
+  }
+  .firstTxtBlock{
+    margin-left: 80px;
+  }
+  .hTxt{
+    color: white;
+    font-family: bebra;
+    font-size: 40px;
+  }
+  .mTxt{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    width: 40%;
+  }
+  .cardGrid{
+    position: relative;
+    height: 2600px;
+  }
+  .bl1, .bl2, .bl3, .bl4, .bl5{
+   width: 450px;
+   position: absolute;
+  }
+  .photo{
+   width: 100%;
+  }
+  .hh{
+    color: white;
+    font-family: bebra;
+    font-size: 40px;
+  }
+  .txt{
+    font-size: 16px;
+    line-height: 1.5;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+  }
+  .bl1{
+    right: 10%;
+    top: 80px;
+    width: 35%;
+  }
+  .bl2{
+    left: 80px;
+    top: 105vh;
+  }
+  .bl3{
+    right: 5%;
+    top: 145vh;
+    width: 30%;
+  }
+  .bl4{
+    left: 10%;
+    top: 1500px;
+    width: 40%;
+  }
+  .bl5{
+    right: 6%;
+    top: 280vh;
+    width: 30%;
+  }
+  .Pl{
+    height: 15px;
+    cursor: pointer;
+  }
+  .str{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .productDetails{
+    margin-left: 20%;
+    margin-right: 80px;
+    margin-bottom: 80px;
+  }
+  .lStr{
+    color: white;
+    font-family: bebra;
+    font-size: 36px;
+  }
+  .buyGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 1fr;
+    margin-left: 20%;
+    margin-right: 80px;
+    margin-bottom: 80px;
+    height: 300px;
+  }
+  .strDiv{
+    height: 50px;
+  }
+  .strQ{
+    width: 50px;
+  }
+  .usa{
+    height: 50px;
+    background-color: #403f3f;
+    border-width: 0px;
+    padding-left: 20px;
+    color: white; 
+    font-family: bebra;
+    font-size: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px;
+  }
+  .qwe{
+    color: white; 
+    font-family: bebra;
+    font-size: 40px;
+    text-decoration: underline;
+  }
+  .sstr{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .infoDiv{
+    text-align: end;
+    justify-content: end;
+    margin-right: 80px;
+    height: 0; /* Начальное значение для скрытого состояния */
+    opacity: 0; /* Начальная непрозрачность */
+    overflow: hidden; /* Скрытие переполнения */
+    transition: height 0.5s ease, opacity 0.5s ease; /* Переходы для height и opacity */
+  }
+  .infoDiv.show {
+    height: auto; /* Высота при показе (должна быть фиксированной или заданной) */
+    opacity: 1; /* Полная непрозрачность */
+  }
+  .infA{
+    font-size: 16px;
+    line-height: 1.5;
+    color: #737272;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .infB{
+    color: white; 
+    font-family: bebra;
+    font-size: 27px;
+    margin-bottom: 15px;
+  }
+  .infoCol1{
+    margin-right: 30px;
+  }
+  .strDiv{
+    cursor: pointer;
+  }
+  .spisok{
+    background-color: #737272;
+    color: black;
+    margin-right: 10px;
+  }
+  .qw{
+    font-family: bebra;
+    font-size: 40px;
+    padding-left: 20px;
+    cursor: pointer;
+  }
+  .qw:hover{
+    background-color: #2a292a;
+  }
+  .botLeft, .botRight{
+    margin-top: 30px;
+  }
+  .ppp{
+    display: flex;
+    justify-content: space-between;
+    margin: 80px;
+  }
+  .hz{
+    width: 95%;
+  }
+  
+  /*SIGN------------------------------------------------------------*/
+  
+  .spider{
+    width: 100%;
+    height: 98vh;
+  }
+  .spiderDiv{
+    position: relative;
+  }
+  .sign{
+    background-color: #403f3f;
+    height: 70vh;
+    width: 70%;
+    position: absolute;
+    top: 15vh;
+    left: 15%;
+    border-radius: 35px;
+    display: flex;
+    padding: 15px 0 15px 15px;
+  }
+  .aaaw{
+    position: relative;
+  }
+  .signLeft{
+    height: 100%;
+    border-radius: 35px;
+  }
+  .signRightDiv{
+    width: 100%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+  .sTxt{
+    color: white; 
+    font-family: bebra;
+    font-size: 42px;
+    margin-top: 7vh;
+  }
+  .siTxt{
+    font-size: 16px;
+    line-height: 1.5;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    margin-bottom: 1vh;
+  }
+  .siTxt:hover{
+    text-decoration: underline;
+    color: #220767;
+  }    
+  .signGrid{
+    display: flex;
+  }
+  .signEmail{
+    width: 100%;
+    margin-top: 10px;
+  }         
+  .signPass{
+    width: 100%;
+    margin-top: 10px;
+  }
+  .signName{
+    margin-right: 10px;
+  }
+  .signInput{
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #2a292a;
+    border-width: 0px;
+    padding: 0;
+    padding-left: 10px;
+    padding-top: 3px;
+    color: white; 
+    font-family: bebra;
+    font-size: 30px;
+  }
+  .signInput::placeholder {
+    color: rgb(149, 146, 146); 
+    font-family: bebra;
+    font-size: 30px;
+  }
+  .signInput::-webkit-input-placeholder {
+    color: rgb(149, 146, 146); 
+    font-family: bebra;
+    font-size: 30px;
+  }
+  .signInput::-moz-placeholder {
+    color: rgb(149, 146, 146);
+    font-size: 30px;
+    font-family: bebra; 
+  }
+  .signInput:-ms-input-placeholder {
+    color: rgb(149, 146, 146); 
+    font-family: bebra;
+    font-size: 30px;
+  }
+  .ok{
+    display: flex;
+    font-size: 16px;
+    line-height: 1.5;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+  }
+  .chch{
+    accent-color: #2a292a;
+  }
+  .check{
+    margin-right: 10px;
+  }
+  .create{
+    width: 100%;
+    background-color: #737272;
+    cursor: pointer;
+    color: white; 
+    font-family: bebra;
+    font-size: 45px;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1023px){
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 30px;
+        height: 120px;
+        position: relative; /* Для позиционирования псевдоэлемента */
+        overflow: hidden; /* Чтобы скрыть выходящий за пределы элемент */
+    }
+    .header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 100%; /* Начальное положение за пределами контейнера */
+      width: 100%;
+      height: 100%;
+      background-color: black; /* Цвет фона */
+      transition: left 0.5s ease; /* Плавный переход */
+    }
+    .none{
+      display: none;
+    }
+    .header.active::before {
+      left: 0; /* Перемещение в видимую область */
+    }
+    a {
+      color: inherit; /* Цвет ссылок становится таким же, как цвет родительского элемента */
+      text-decoration: none; /* Убираем подчёркивание */
+      background-color: transparent; /* Фон прозрачный, чтобы не выделяться */
+      cursor: pointer; /* Оставляем указатель, чтобы было понятно, что ссылка кликабельна */
+    }
+    .upArrow{
+      height: 50px;
+    }
+    .upArrowDiv{
+      position: sticky;
+      top: 20px;
+      margin-right: 20px;
+      display: none;
+      cursor: pointer;
+      z-index: 3;
+    }
+    .activeMenu{
+      z-index: 2;
+      color: white;
+      display: flex;
+    }
+    .about{
+      margin-right: 40px;
+      font-family: bebra;
+      font-size: 40px;
+      cursor: pointer;
+    }
+    .about:hover{
+      color: black;
+      text-shadow: 1px 0 1px white, 
+    0 1px 1px white, 
+    -1px 0 1px white, 
+    0 -1px 1px white;
+    }
+    .marshLogo{
+        width: 40%;
+        margin-top: 15px;
+    }
+    .menuSvg{
+        width: 40px;
+    }
+    .menuDiv{
+        width: 40px;
+        cursor: pointer;
+        z-index: 2;
+    }
+    .aa{
+        width: 100%;
+    }
+    @font-face {
+      font-family: 'bebra'; 
+      src: url(../fonts/BebasNeue-Regular.ttf); 
+    }
+    .wel{
+        font-family: bebra;
+        margin-top: 90px;
+        font-size: 80px;
+        color: white;
+        width: 60%;
+        margin-left: 80px;
+    }
+    .r{
+        width: 400px;
+        margin-top: 20px;
+    }
+    .rr{
+        display: flex;
+        justify-content: right;
+        margin-right: 80px;
+    }
+    .tt{
+        display: flex;
+        justify-content:center;
+        color: white;
+        font-family: bebra;
+        font-size: 35px;
+    }
+    .t{
+        width: 90%;
+        text-align: center;
+        margin: 100px 0px 100px 0px;
+    }
+    .flex1{
+        display: flex;
+        justify-content: space-between;
+        margin: 0px 60px 100px 60px;
+    }
+    .lll{
+      width: 55%;
+    }
+    .llll{
+      width: 100%;
+      height: 100%;
+    }
+    .rrr{
+        color: white;
+        text-align: justify;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 20px;
+        width: 270px;
+        line-height: 1.5;
+    }
+      .items-wrap {
+        position: relative;
+        display: flex;
+        overflow: hidden;
+      }
+      .items {
+        flex-shrink: 0;
+        display: flex;
+        gap: 20px;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .item {
+        width: 400px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        transition: all 0.1s ease-in-out;
+        font-family: bebra;
+        font-size: 64px;
+      }
+      .marquee {
+        animation: scroll 40s linear infinite;
+      }
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+    hr{
+        color: white;
+        width: 100%;
+    }
+    .grid1{
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 250px 250px;
+      margin: 100px 80px 100px 80px;
+      grid-column-gap: 20px
+    }
+    .n1{
+      display: none;
+    }
+    .sold{
+      grid-column: 1/4;
+      background-color: #403f3f;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .rev{
+      grid-column: 4/8;
+      background-color: #403f3f;
+      margin-bottom: 20px;
+      flex-direction: column;
+      justify-content: space-between;
+      display: flex;
+    }
+    .emp{
+      grid-column: 1/4;
+      background-color: #403f3f;
+      flex-direction: column;
+      justify-content: space-between;
+      display: flex;
+    }
+    .n2{
+      display: none;
+    }
+    .artist{
+      grid-column: 4/8;
+      background-color: #403f3f;
+      flex-direction: column;
+      justify-content: space-between;
+      display: flex;
+    }
+    .numSold{
+      font-family: bebra;
+      font-size: 70px;
+      color: white;
+      margin-left: 10px;
+    }
+    .txtSold{
+      color: white;
+      margin-left: 10px;
+      font-family: bebra;
+      font-size: 35px;
+    }
+    .i {
+      position: relative;
+      overflow: hidden; /* Скрыть все, что выходит за пределы контейнера */
+      margin-bottom: 100px;
+    }
+    .aaa {
+      width: 100%;
+      z-index: -1;
+    }
+    .text-container {
+      height: 0px; /* Высота контейнера, подберите по своему усмотрению */
+      overflow: hidden; /* Скрыть тексты, которые выходят за пределы */
+      /* Установить относительное позиционирование для контейнера текста */
+      z-index: 1;
+    }
+    .text {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 100%; /* Начальное положение за пределами видимости */
+      opacity: 0; /* Начальная прозрачность */
+      animation: slideIn 13s infinite; /* Анимация */
+      font-family: bebra;
+      font-size: 150px;
+      color: white;
+    }
+    /* Определяем ключевые кадры для анимации */
+    @keyframes slideIn {
+      0%, 33% {
+          top: 100%; /* Текст вне видимости */
+          opacity: 0; /* Прозрачный */
+      }
+      10%, 23% {
+          top: 25%; /* Показать текст (центрируем с учетом высоты текста) */
+          opacity: 1; /* Полная видимость */
+      }
+      30%, 100% {
+          top: -100%; /* Текст снова вне видимости */
+          opacity: 0; /* Прозрачный */
+      }
+    }
+    /* Добавляем задержку для каждого текста */
+    .text:nth-child(1) {
+      animation-delay: 0s; /* Первый текст появляется сразу */
+    }
+    .text:nth-child(2) {
+      animation-delay: 3s; /* Второй текст появляется через 3 секунды */
+      display: flex;
+      justify-content: right;
+    }
+    .text:nth-child(3) {
+      animation-delay: 6s; /* Третий текст появляется через 6 секунд */
+    }
+    .text:nth-child(4) {
+      animation-delay: 9s; /* Четвертый текст появляется через 9 секунд */
+      display: flex;
+      justify-content: center;
+    }
+    .grid2{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 80px;
+      margin-top: 5vh;
+    }
+    .headPhoto{
+      width: 100%;
+    }
+    .headphones{
+      position: relative;
+    }
+    .headTxt{
+      position: absolute;
+      background-color: black;
+      font-family: bebra;
+      color: white;
+      font-size: 50px;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      height: 70px;
+      cursor: pointer;
+    }
+    .hheadTxt{
+      position: absolute;
+      background-color: black;
+      font-family: bebra;
+      color: white;
+      font-size: 50px;
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70px;
+      cursor: pointer;
+    }
+    .headTxt:hover{
+      background-color: white;
+      color: black;
+    }
+    .hisPhoto1Div{
+      display: flex;
+      justify-content:end;
+      margin-right: 80px;
+      opacity: 0;
+      transform: translateY(160px);
+    }
+    .hisPhoto1Div.element-show {
+      opacity: 1;
+      transition: all 1s;
+      transform: translateY(0%);
+    }
+    .hisPhoto1{
+      width: 300px;
+    }
+    .block1{
+      position: relative;
+      display: flex;
+      flex-direction: column; 
+      min-height: 160vh;
+      opacity: 0;
+      margin-top: 5vh;
+      transform: translateY(160px);
+    }
+    .block1.element-show {
+      opacity: 1;
+      transition: all 1s;
+      transform: translateY(0%);
+    }
+    .block2{
+      position: relative;
+      display: flex;
+      flex-direction: column; 
+      min-height: 170vh;
+      opacity: 0;
+      transform: translateY(160px);
+    }
+    .block2.element-show {
+      opacity: 1;
+      transition: all 1s;
+      transform: translateY(0%);
+    }
+    .hisphoto6Div{
+      opacity: 0;
+      transform: translateY(160px);
+    }
+    .hisphoto6Div.element-show {
+      opacity: 1;
+      transition: all 1s;
+      transform: translateY(0%);
+    }
+    .block3{
+      position: relative;
+      display: flex;
+      flex-direction: column; 
+      min-height: 110vh;
+      opacity: 0;
+      margin-top: 10px;
+      transform: translateY(160px);
+    }
+    .block3.element-show {
+      opacity: 1;
+      transition: all 1s;
+      transform: translateY(0%);
+    }
+    .hisphoto9Div{
+      opacity: 0;
+      transform: translateY(160px);
+    }
+    .hisphoto9Div.element-show {
+      opacity: 1;
+      transition: all 1s;
+      transform: translateY(0%);
+    }
+    .hisphoto2Div{
+      position: absolute;
+      left: 80px;
+      width: 50%;
+    }
+    .hisPhoto2{
+      width: 100%;
+    }
+    .hisphoto3Div{
+      position: absolute;
+      right: 8%;
+      top: 50vh;
+      width: 40%;
+    }
+    .hisPhoto3Txt{
+      width: 290px;
+      text-align: justify;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .hisPhoto2Txt{
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      width: 100%;
+      line-height: 1.5;
+    }
+    .hisPhoto2, .hisPhoto3, .hisPhoto4, .hisPhoto5, .hisPhoto7{
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    .hisPhoto3h, .hisPhoto4h, .hisPhoto6h{
+      color: white;
+      font-family: bebra;
+      font-size: 40px;
+    }
+    .hisphoto4Div{
+      position: absolute;
+      left: 10%;
+    }
+    .hisPhoto4Txt{
+      width: 390px;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      text-align: justify;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .hisphoto5Div{
+      position: absolute;
+      right: 80px;
+      top: 80vh;
+      width: 50%;
+    }
+    .hisPhoto5Txt{
+      width: 100%;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      text-align: justify;
+      line-height: 1.5;
+    }
+    .photoBigDiv6{
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .pp{
+      margin-right: 20px;
+    }
+    .hisphoto6Div{
+      margin-left: 80px;
+    }
+    .hisPhoto6Txt{
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      text-align: justify;
+      line-height: 1.5;
+      width: 400px;
+    }
+    .hisphoto7Div{
+      position: absolute;
+      right: 80px;
+    }
+    .hisPhoto7Txt{
+      width: 300px;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      text-align: justify;
+      line-height: 1.5;
+    }
+    .hisphoto8Div{
+      position: absolute;
+      left: 80px;
+      top: 50vh;
+      display: flex;
+      align-items: flex-start;
+      text-align: justify;
+      justify-content: space-between;
+      right: 80px;
+    }
+    .hisPhoto8{
+      width: 400px;
+    }
+    .ppp{
+      margin-right: 20px;
+    }
+    .pppp{
+      width: 50%;
+      margin-right: 10px;
+    }
+    .hisPhoto8Txt{
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      text-align: justify;
+      line-height: 1.5;
+      width: 30%;
+    }
+    .hisphoto9Div{
+      position: absolute;
+      left: 80px;
+      right: 80px;
+    }
+    .hisPhoto9{
+      width: 100%;
+    }
+    .hisPhoto{
+      margin-bottom: 50vh;
+    }
+    .star{
+      height: 15px;
+      margin-left: 15px;
+    }
+    .strLeft{
+      height: 30px;
+      cursor: pointer;
+    }
+    .strRight{
+      height: 30px;
+      cursor: pointer;
+      transform: rotate(3.142rad);
+    }
+    .revTop{
+      display: flex;
+      justify-content: space-between;
+      font-family: bebra;
+      color: white;
+      font-size: 40px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .reviews{
+      text-align: center;
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-bottom: 80px;
+    }
+    .revStar{
+      display: flex;
+      align-items: center;
+    }
+    .revText{
+      font-family: bebra;
+      color: white;
+      font-size: 35px;
+      text-align:justify;
+      margin-bottom: 30px;
+      height: 40vh;
+    }
+    .revBottom{
+      display: flex;
+      font-family: bebra;
+      color: white;
+      font-size: 40px;
+      justify-content: center;
+    }
+    .num{
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    .rightArrow{
+      height: 30px;
+    }
+    .subscribe{
+      margin-top: 100px;
+    }
+    .subTxt1, .subTxt2, .subTxt3{
+      font-family: bebra;
+      font-size: 70px;
+      color: white;
+    }
+    .subTxt1{
+      margin-left: 80px;
+    }
+    .subTxt2{
+      margin-left: 30%;
+    }
+    .subTxt3{
+      text-align: right;
+      margin-right: 80px;
+    }
+    .subForm{
+      text-align: right;
+      margin-left: 10%;
+      justify-content: space-between;
+      margin-right: 80px;
+      align-items: end;
+      margin-bottom: 50px;
+      margin-top: 15px;
+    }
+    .www{
+      display: flex;
+    }
+    .subInp{
+      width: 90%;
+      height: 50px;
+      background-color: #403f3f;
+      border-width: 0px;
+      padding-top: 5px;
+      padding-left: 20px;
+      color: white; 
+      font-family: bebra;
+      font-size: 40px;
+    }
+    .subInp::placeholder {
+      color: white; 
+      font-family: bebra;
+      font-size: 40px;
+    }
+    .subInp::-webkit-input-placeholder {
+      color: white; 
+      font-family: bebra;
+      font-size: 40px;
+    }
+    .subInp::-moz-placeholder {
+      color: white;
+      font-size: 40px;
+      font-family: bebra; 
+    }
+    .subInp:-ms-input-placeholder {
+      color: white; 
+      font-family: bebra;
+      font-size: 40px;
+    }
+    .rightArrowDiv{
+      height: 55px;
+      width: 55px;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    .subEnterTxt{
+      margin-top: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      width: 200px;
+      text-align: left;
+      line-height: 1.5;
+    }
+    input:focus {
+        outline: none;
+    }
+    .footer{
+      background-color: black;
+      color: white;
+      padding-top: 150px;
+    }
+    .footTop{
+      display: flex;
+      justify-content: space-between;
+      margin-left: 60px;
+      margin-right: 60px;
+      margin-bottom: 100px;
+    }
+    .footLeft{
+      font-family: bebra;
+      color: white;
+      font-size: 100px;
+    }
+    .support, .footNum{
+      font-family: bebra;
+      color: white;
+      font-size: 40px;
+    }
+    .footNum{
+      margin-bottom: 60px;
+    }
+    .footTxt{
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      line-height: 1.5;
+      font-size: 16px;
+    }
+    .hours{
+      display: flex;
+      margin-top: 30px;
+    }
+    .hoursLeft{
+      margin-right: 10%;
+    }
+    .budni{
+      margin-bottom: 10px;
+    }
+    .flex2{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 80px;
+    }
+    .flex2right{
+      display: flex;
+      align-items: center;
+    }
+    .marshLogoFlex{
+      width: 50%;
+    }
+    .kaakshki{
+      margin-left: 100px;
+    }
+    .footTxtt{
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+    
+    /* PRODUCTS--------------------------------------------*/
+    
+    /*HEADPHONES-----------------------------------------------------------*/
+    
+    .headerProductsHeadphones{
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      font-family: bebra;
+      font-size: 64px;
+    }
+    .headDiv, .speakersDiv, .ampsDiv{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      cursor: pointer;
+    }
+    .speakersDiv, .ampsDiv{
+      background-color: black;
+    }
+    .speakersDiv:hover{
+      font-size: 60px;
+    }
+    .ampsDiv:hover{
+      font-size: 60px;
+    }
+    .categoriesHeadphones{
+      display: flex;
+      justify-content: flex-start;
+      color: white;
+      font-family: bebra;
+      font-size: 36px;
+      margin-top: 30px;
+      margin-left: 70px;
+      margin-bottom: 30px;
+    }
+    .cat{
+      margin-right: 30px;
+      cursor: pointer;
+    }
+    .catCheck{
+      margin-right: 30px;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .gridHeadphones{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      margin-left: 80px;
+      margin-right: 80px;
+    }
+    .gridHBlock3{
+      grid-column: 3/5;
+      grid-row: 1/3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .block1Img, .block2Img, .block3Img{
+      width: 100%;
+    }
+    .morz{
+      margin-bottom: 6vh;
+    }
+    .gridHBlock2{
+      grid-row: 2/3;
+      grid-column: 1/3;
+    }
+    .gridHBlock1{
+      grid-column: 1/3;
+    }
+    .gridHBlock1, .gridHBlock2, .gridHBlock3{
+      margin: 5px;
+    }
+    .blockTxtBig{
+      color: white;
+      font-family: bebra;
+      font-size: 40px;
+      cursor: pointer;
+      margin-left: 5px;
+      text-align: justify;
+    }
+    .blockTxtSmall{
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: justify;
+    }
+    
+    .grid2Headphones{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      margin-left: 80px;
+      margin-right: 80px;
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
+    .grid2Block1Img{
+      width: 100%;
+      
+    }
+    .grid2Block1ImgDiv{
+      margin: 5px;
+    }
+    .txtBottom{
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-left: 80px;
+      width: 80%;
+      text-align: justify;
+      margin-bottom: 80px;
+    }
+    
+    /*SPeakers----------------------------------------------------------------------------*/
+    
+    .grid2Speakers{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      margin-left: 80px;
+      margin-right: 80px;
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
+    .grid2Block1S{
+      grid-column: 1/3;
+      grid-row: 1/3;
+    }
+    
+    /*CARDS----------------------------------------------------------*/
+    
+    .h1{
+      font-family: bebra;
+      color: white;
+      font-size: 80px;
+      margin-left: 80px;
+    }
+    .glavPhotoDiv{
+      display: flex;
+      margin-left: 80px;
+      margin-right: 80px;
+      margin-bottom: 40px;
+    }
+    .glavPhoto{
+      width: 100%;
+    }
+    .firstTxtBlock{
+      margin-left: 80px;
+    }
+    .hTxt{
+      color: white;
+      font-family: bebra;
+      font-size: 40px;
+    }
+    .mTxt{
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      width: 90%;
+    }
+    .cardGrid{
+      position: relative;
+      height: 370vh;
+    }
+    .bl1, .bl2, .bl3, .bl4, .bl5{
+     width: 450px;
+     position: absolute;
+    }
+    .photo{
+     width: 100%;
+    }
+    .hh{
+      color: white;
+      font-family: bebra;
+      font-size: 40px;
+    }
+    .txt{
+      font-size: 16px;
+      line-height: 1.5;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: justify;
+    }
+    .bl1{
+      right: 10%;
+      top: 80px;
+      width: 45%;
+    }
+    .bl2{
+      left: 80px;
+      top: 105vh;
+      width: 35%;
+    }
+    .bl3{
+      right: 5%;
+      top: 145vh;
+      width: 35%;
+    }
+    .bl4{
+      left: 10%;
+      top: 1500px;
+      width: 40%;
+    }
+    .bl5{
+      right: 8%;
+      top: 280vh;
+      width: 30%;
+    }
+    .Pl{
+      height: 15px;
+      cursor: pointer;
+    }
+    .str{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .productDetails{
+      margin-left: 20%;
+      margin-right: 80px;
+      margin-bottom: 80px;
+    }
+    .lStr{
+      color: white;
+      font-family: bebra;
+      font-size: 30px;
+    }
+    .buyGrid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 50px 1fr;
+      margin-left: 20%;
+      margin-right: 80px;
+      margin-bottom: 30px;
+      height: 300px;
+    }
+    .strDiv{
+      height: 50px;
+    }
+    .strQ{
+      width: 50px;
+    }
+    .usa{
+      height: 50px;
+      background-color: #403f3f;
+      border-width: 0px;
+      padding-left: 20px;
+      color: white; 
+      font-family: bebra;
+      font-size: 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-right: 10px;
+    }
+    .qwe{
+      color: white; 
+      font-family: bebra;
+      font-size: 35px;
+      text-decoration: underline;
+    }
+    .sstr{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .infoDiv{
+      text-align: end;
+      justify-content: end;
+      margin-right: 80px;
+      height: 0; /* Начальное значение для скрытого состояния */
+      opacity: 0; /* Начальная непрозрачность */
+      overflow: hidden; /* Скрытие переполнения */
+      transition: height 0.5s ease, opacity 0.5s ease; /* Переходы для height и opacity */
+    }
+    .infoDiv.show {
+      height: auto; /* Высота при показе (должна быть фиксированной или заданной) */
+      opacity: 1; /* Полная непрозрачность */
+    }
+    .infA{
+      font-size: 14px;
+      line-height: 1.5;
+      color: #737272;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .infB{
+      color: white; 
+      font-family: bebra;
+      font-size: 23px;
+      margin-bottom: 15px;
+    }
+    .infoCol1{
+      margin-right: 30px;
+    }
+    .strDiv{
+      cursor: pointer;
+    }
+    .spisok{
+      background-color: #737272;
+      color: black;
+      margin-right: 10px;
+      height: 36vh;
+    }
+    .qw{
+      font-family: bebra;
+      font-size: 35px;
+      padding-left: 10px;
+      cursor: pointer;
+    }
+    .qw:hover{
+      background-color: #2a292a;
+    }
+    .botLeft, .botRight{
+      margin-top: 30px;
+    }
+    .ppp{
+      display: flex;
+      justify-content: space-between;
+      margin: 80px;
+    }
+    .hz{
+      width: 95%;
+    }
+    
+    /*SIGN------------------------------------------------------------*/
+    
+    .spider{
+      width: 100%;
+      height: 98vh;
+    }
+    .spiderDiv{
+      position: relative;
+    }
+    .sign{
+      background-color: #403f3f;
+      height: 70vh;
+      width: 90%;
+      position: absolute;
+      top: 15vh;
+      left: 5%;
+      border-radius: 35px;
+      display: flex;
+      padding: 15px 0 15px 15px;
+    }
+    .aaaw{
+      position: relative;
+    }
+    .signLeft{
+      height: 100%;
+      border-radius: 35px;
+    }
+    .signRightDiv{
+      width: 100%;
+      margin-right: 5%;
+      margin-left: 5%;
+    }
+    .sTxt{
+      color: white; 
+      font-family: bebra;
+      font-size: 40px;
+      margin-top: 5vh;
+    }
+    .siTxt{
+      font-size: 16px;
+      line-height: 1.5;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+      margin-bottom: 1vh;
+    }
+    .siTxt:hover{
+      text-decoration: underline;
+      color: #220767;
+    }    
+    .signGrid{
+      display: flex;
+    }
+    .signEmail{
+      width: 100%;
+      margin-top: 10px;
+    }         
+    .signPass{
+      width: 100%;
+      margin-top: 10px;
+    }
+    .signName{
+      margin-right: 10px;
+    }
+    .signInput{
+      width: 100%;
+      box-sizing: border-box;
+      background-color: #2a292a;
+      border-width: 0px;
+      padding: 0;
+      padding-left: 10px;
+      padding-top: 3px;
+      color: white; 
+      font-family: bebra;
+      font-size: 30px;
+    }
+    .signInput::placeholder {
+      color: rgb(149, 146, 146); 
+      font-family: bebra;
+      font-size: 30px;
+    }
+    .signInput::-webkit-input-placeholder {
+      color: rgb(149, 146, 146); 
+      font-family: bebra;
+      font-size: 30px;
+    }
+    .signInput::-moz-placeholder {
+      color: rgb(149, 146, 146);
+      font-size: 30px;
+      font-family: bebra; 
+    }
+    .signInput:-ms-input-placeholder {
+      color: rgb(149, 146, 146); 
+      font-family: bebra;
+      font-size: 30px;
+    }
+    .ok{
+      display: flex;
+      font-size: 16px;
+      line-height: 1.5;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-top: 3vh;
+      margin-bottom: 2vh;
+    }
+    .chch{
+      accent-color: #2a292a;
+    }
+    .check{
+      margin-right: 10px;
+    }
+    .create{
+      width: 100%;
+      background-color: #737272;
+      cursor: pointer;
+      color: white; 
+      font-family: bebra;
+      font-size: 40px;
+      text-align: center;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    }
+
+    @media screen and (min-width: 425px) and (max-width: 767px){
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 30px;
+        height: 15vh; /* Исходная высота блока */
+        position: relative; /* Для позиционирования псевдоэлемента */
+        overflow: hidden; /* Чтобы скрыть выходящий за пределы элемент */
+    }
+    .header::before {
+        content: "";
+        position: absolute;
+        top: -100%; /* Начальное положение за пределами контейнера */
+        left: 0; /* По горизонтали остаётся на месте */
+        width: 100%;
+        height: 100%; /* Высота псевдоэлемента равна высоте блока */
+        background-color: rgb(0, 0, 0); /* Цвет фона */
+        transition: top 0.5s ease; /* Плавный переход */
+    }
+    .none{
+      display: none;
+    }
+    .header.active::before {
+        top: 0; /* Перемещение в видимую область */
+    }
+    
+    .header.active {
+        height: 100vh; /* Новая высота блока при активации */
+    }
+      a {
+        color: inherit; /* Цвет ссылок становится таким же, как цвет родительского элемента */
+        text-decoration: none; /* Убираем подчёркивание */
+        background-color: transparent; /* Фон прозрачный, чтобы не выделяться */
+        cursor: pointer; /* Оставляем указатель, чтобы было понятно, что ссылка кликабельна */
+      }
+      .upArrow{
+        height: 50px;
+      }
+      .upArrowDiv{
+        position: sticky;
+        top: 20px;
+        margin-right: 20px;
+        display: none;
+        cursor: pointer;
+        z-index: 3;
+      }
+      .activeMenu{
+        z-index: 2;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 4vh;
+      }
+      .about{
+        margin-right: 40px;
+        font-family: bebra;
+        font-size: 60px;
+        margin-bottom: 6vh;
+        cursor: pointer;
+      }
+      .about:hover{
+        color: black;
+        text-shadow: 1px 0 1px white, 
+      0 1px 1px white, 
+      -1px 0 1px white, 
+      0 -1px 1px white;
+      }
+      .marshLogo{
+          width: 40%;
+          margin-top: 15px;
+      }
+      .menuSvg{
+          width: 40px;
+      }
+      .menuDiv{
+          width: 40px;
+          cursor: pointer;
+          z-index: 2;
+      }
+      .aa{
+          width: 100%;
+      }
+      @font-face {
+        font-family: 'bebra'; 
+        src: url(../fonts/BebasNeue-Regular.ttf); 
+      }
+      .wel{
+          font-family: bebra;
+          margin-top: 40px;
+          font-size: 60px;
+          color: white;
+          width: 100%;
+          margin-left: 10%;
+      }
+      .r{
+          width: 100%;
+          margin-top: 20px;
+      }
+      .rr{
+          display: flex;
+          margin-left: 10%;
+          margin-right: 10%;
+      }
+      .tt{
+          display: flex;
+          justify-content:center;
+          color: white;
+          font-family: bebra;
+          font-size: 35px;
+      }
+      .t{
+          width: 90%;
+          text-align: justify;
+          margin: 70px 10% 70px 10%;
+      }
+      .flex1{
+          margin: 0px 10% 100px 10%;
+      }
+      .lll{
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      .llll{
+        width: 100%;
+        height: 100%;
+      }
+      .rrr{
+          color: white;
+          text-align: justify;
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: 20px;
+          width: 100%;
+          line-height: 1.5;
+      }
+        .items-wrap {
+          position: relative;
+          display: flex;
+          overflow: hidden;
+        }
+        .items {
+          flex-shrink: 0;
+          display: flex;
+          gap: 20px;
+          justify-content: space-around;
+          align-items: center;
+        }
+        .item {
+          width: 400px;
+          height: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          transition: all 0.1s ease-in-out;
+          font-family: bebra;
+          font-size: 64px;
+        }
+        .marquee {
+          animation: scroll 40s linear infinite;
+        }
+        @keyframes scroll {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-100%);
+          }
+        }
+      hr{
+          color: white;
+          width: 100%;
+      
+      }
+      .grid1{
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 60px;
+        margin-bottom: 60px;
+      }
+      .n1{
+        display: none;
+      }
+      .sold{
+        grid-column: 1/4;
+        background-color: #403f3f;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 30vh;
+      }
+      .rev{
+        grid-column: 4/8;
+        background-color: #403f3f;
+        margin-bottom: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        display: flex;
+        height: 30vh;
+      }
+      .emp{
+        grid-column: 1/4;
+        background-color: #403f3f;
+        flex-direction: column;
+        justify-content: space-between;
+        display: flex;
+        height: 30vh;
+        margin-bottom: 20px;
+      }
+      .n2{
+        display: none;
+      }
+      .artist{
+        grid-column: 4/8;
+        background-color: #403f3f;
+        flex-direction: column;
+        justify-content: space-between;
+        display: flex;
+        height: 30vh;
+      }
+      .numSold{
+        font-family: bebra;
+        font-size: 70px;
+        color: white;
+        margin-left: 10px;
+      }
+      .txtSold{
+        color: white;
+        margin-left: 10px;
+        font-family: bebra;
+        font-size: 35px;
+      }
+      .i {
+        position: relative;
+        overflow: hidden; /* Скрыть все, что выходит за пределы контейнера */
+        margin-bottom: 50px;
+      }
+      .aaa {
+        width: 100%;
+        z-index: -1;
+      }
+      .text-container {
+        height: 0px; /* Высота контейнера, подберите по своему усмотрению */
+        overflow: hidden; /* Скрыть тексты, которые выходят за пределы */
+        /* Установить относительное позиционирование для контейнера текста */
+        z-index: 1;
+      }
+      .text {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 100%; /* Начальное положение за пределами видимости */
+        opacity: 0; /* Начальная прозрачность */
+        animation: slideIn 13s infinite; /* Анимация */
+        font-family: bebra;
+        font-size: 80px;
+        color: white;
+      }
+      /* Определяем ключевые кадры для анимации */
+      @keyframes slideIn {
+        0%, 33% {
+            top: 100%; /* Текст вне видимости */
+            opacity: 0; /* Прозрачный */
+        }
+        10%, 23% {
+            top: 25%; /* Показать текст (центрируем с учетом высоты текста) */
+            opacity: 1; /* Полная видимость */
+        }
+        30%, 100% {
+            top: -100%; /* Текст снова вне видимости */
+            opacity: 0; /* Прозрачный */
+        }
+      }
+      /* Добавляем задержку для каждого текста */
+      .text:nth-child(1) {
+        animation-delay: 0s; /* Первый текст появляется сразу */
+      }
+      .text:nth-child(2) {
+        animation-delay: 3s; /* Второй текст появляется через 3 секунды */
+        display: flex;
+        justify-content: right;
+      }
+      .text:nth-child(3) {
+        animation-delay: 6s; /* Третий текст появляется через 6 секунд */
+      }
+      .text:nth-child(4) {
+        animation-delay: 9s; /* Четвертый текст появляется через 9 секунд */
+        display: flex;
+        justify-content: center;
+      }
+      .grid2{
+        margin-top: 2vh;
+        margin-bottom: 7vh;
+      }
+      .headPhoto{
+        width: 100%;
+      }
+      .headphones{
+        position: relative;
+      }
+      .headTxt{
+        position: absolute;
+        background-color: black;
+        font-family: bebra;
+        color: white;
+        font-size: 50px;
+        display: flex;
+        width: 60%;
+        justify-content: center;
+        align-items: center;
+        height: 70px;
+        cursor: pointer;
+      }
+      .hheadTxt{
+        position: absolute;
+        background-color: black;
+        font-family: bebra;
+        color: white;
+        font-size: 50px;
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70px;
+        cursor: pointer;
+      }
+      .headTxt:hover{
+        background-color: white;
+        color: black;
+      }
+      .hisPhoto6{
+        width: 100%;
+      }
+      .hisPhoto6two{
+        width: 100px;
+      }
+      .hisPhoto1Div{
+        display: flex;
+        justify-content:end;
+        margin-right: 10%;
+        margin-left: 10%;
+        opacity: 0;
+        transform: translateY(160px);
+      }
+      .hisPhoto1Div.element-show {
+        opacity: 1;
+        transition: all 1s;
+        transform: translateY(0%);
+      }
+      .hisPhoto1{
+        width: 100%;
+      }
+      .block1{
+        display: flex;
+        flex-direction: column; 
+        opacity: 0;
+        margin-top: 5vh;
+        transform: translateY(160px);
+      }
+      .block1.element-show {
+        opacity: 1;
+        transition: all 1s;
+        transform: translateY(0%);
+      }
+      .block2{
+        margin-left: 10%;
+        margin-right: 10%;
+        display: flex;
+        flex-direction: column; 
+        opacity: 0;
+        transform: translateY(160px);
+        margin-bottom: 5vh;
+      }
+      .block2.element-show {
+        opacity: 1;
+        transition: all 1s;
+        transform: translateY(0%);
+      }
+      .hisphoto6Div{
+        opacity: 0;
+        transform: translateY(160px);
+      }
+      .hisphoto6Div.element-show {
+        opacity: 1;
+        transition: all 1s;
+        transform: translateY(0%);
+      }
+      .block3{
+        display: flex;
+        flex-direction: column; 
+        min-height: 110vh;
+        opacity: 0;
+        margin-top: 10px;
+        transform: translateY(160px);
+      }
+      .block3.element-show {
+        opacity: 1;
+        transition: all 1s;
+        transform: translateY(0%);
+      }
+      .hisphoto9Div{
+        opacity: 0;
+        transform: translateY(160px);
+      }
+      .hisphoto9Div.element-show {
+        opacity: 1;
+        transition: all 1s;
+        transform: translateY(0%);
+      }
+      .hisphoto2Div{
+        margin-right: 10%;
+        margin-left: 10%;
+        margin-bottom: 5vh;
+      }
+      .hisPhoto2{
+        width: 100%;
+      }
+      .hisphoto3Div{
+        top: 50vh;
+        margin-right: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: end;
+        margin-left: 10%;
+        margin-bottom: 5vh;
+      }
+      .hisPhoto3Txt{
+        width: 100%;
+        text-align: justify;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      .hisPhoto2Txt{
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        width: 100%;
+        line-height: 1.5;
+      }
+      .hisPhoto2, .hisPhoto3, .hisPhoto4, .hisPhoto5, .hisPhoto7{
+        margin-bottom: 20px;
+        width: 100%;
+      }
+      .hisPhoto3{
+        width: 60%;
+      }
+      .hisPhoto3h, .hisPhoto4h, .hisPhoto6h{
+        color: white;
+        font-family: bebra;
+        font-size: 40px;
+      }
+      .hisphoto4Div{
+        left: 10%;
+        width: 100%;
+      }
+      .hisPhoto4Txt{
+        width: 100%;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: justify;
+        margin-bottom: 20px;
+        line-height: 1.5;
+      }
+      .hisphoto5Div{
+        right: 80px;
+        top: 80vh;
+        width: 100%;
+      }
+      .hisPhoto5{
+        width: 70%;
+      }
+      .hisPhoto5Txt{
+        width: 100%;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: justify;
+        line-height: 1.5;
+      }
+      .photoBigDiv6{
+        margin-bottom: 20px;
+        width: 100%;
+      }
+      .pp{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 5vh;
+      }
+      .hisphoto6Div{
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 5vh;
+      }
+      .hisPhoto6two{
+        width: 70%;
+      }
+      .hisPhoto6Txt{
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: justify;
+        line-height: 1.5;
+        width: 100%;
+      }
+      .hisphoto7Div{
+        right: 80px;
+      }
+      .hisPhoto7Txt{
+        width: 40%;
+        margin-left: 10%;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: justify;
+        line-height: 1.5;
+        margin-bottom: 5vh;
+      }
+      .hisphoto8Div{
+        top: 50vh;
+        display: flex;
+        align-items: flex-end;
+        text-align: justify;
+        justify-content: space-between;
+        right: 80px;
+        flex-direction: column-reverse;
+        margin-right: 10%;
+        margin-left: 10%;
+      }
+      .hisPhoto8{
+        width: 100%;
+      }
+      .ppp{
+        margin-right: 20px;
+      }
+      .pppp{
+        width: 100%;
+        margin-left: 10%;
+      }
+      .hisPhoto8Txt{
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: justify;
+        line-height: 1.5;
+        width: 50%;
+        margin-bottom: 5vh;
+      }
+      .hisphoto9Div{
+        left: 80px;
+        right: 80px;
+        margin-top: 15vh;
+        display: none;
+      }
+      .hisPhoto9{
+        width: 100%;
+      }
+      .hisPhoto{
+        margin-bottom: 10vh;
+      }
+      .star{
+        height: 15px;
+        margin-left: 15px;
+      }
+      .strLeft{
+        height: 30px;
+        cursor: pointer;
+      }
+      .strRight{
+        height: 30px;
+        cursor: pointer;
+        transform: rotate(3.142rad);
+      }
+      .revTop{
+        display: flex;
+        justify-content: space-between;
+        font-family: bebra;
+        color: white;
+        font-size: 40px;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .reviews{
+        text-align: center;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 80px;
+      }
+      .revStar{
+        display: flex;
+        align-items: center;
+      }
+      .revText{
+        font-family: bebra;
+        color: white;
+        font-size: 25px;
+        text-align:justify;
+        margin-bottom: 20px;
+        height: 35vh;
+      }
+      .revBottom{
+        display: flex;
+        font-family: bebra;
+        color: white;
+        font-size: 40px;
+        justify-content: center;
+      }
+      .num{
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      .rightArrow{
+        height: 30px;
+      }
+      .subscribe{
+        margin-top: 100px;
+      }
+      .subTxt1, .subTxt2, .subTxt3{
+        font-family: bebra;
+        font-size: 60px;
+        color: white;
+      }
+      .subTxt1{
+        margin-left: 5%;
+      }
+      .subTxt2{
+        margin-left: 25%;
+      }
+      .subTxt3{
+        text-align: right;
+        margin-right: 80px;
+      }
+      .subForm{
+        text-align: right;
+        margin-left: 5%;
+        justify-content: space-between;
+        margin-right: 5%;
+        align-items: end;
+        margin-bottom: 50px;
+        margin-top: 15px;
+      }
+      .www{
+        display: flex;
+      }
+      .subInp{
+        width: 90%;
+        height: 50px;
+        background-color: #403f3f;
+        border-width: 0px;
+        padding-top: 5px;
+        padding-left: 20px;
+        color: white; 
+        font-family: bebra;
+        font-size: 40px;
+      }
+      .subImgDiv{
+        display: none;
+      }
+      .subInp::placeholder {
+        color: white; 
+        font-family: bebra;
+        font-size: 40px;
+      }
+      .subInp::-webkit-input-placeholder {
+        color: white; 
+        font-family: bebra;
+        font-size: 40px;
+      }
+      .subInp::-moz-placeholder {
+        color: white;
+        font-size: 40px;
+        font-family: bebra; 
+      }
+      .subInp:-ms-input-placeholder {
+        color: white; 
+        font-family: bebra;
+        font-size: 40px;
+      }
+      .rightArrowDiv{
+        height: 55px;
+        width: 55px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      .subEnterTxt{
+        margin-top: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        text-align: left;
+        line-height: 1.5;
+      }
+      input:focus {
+          outline: none;
+      }
+      .footer{
+        background-color: black;
+        color: white;
+        padding-top: 10vh;
+      }
+      .footTop{
+        justify-content: space-between;
+        margin-bottom: 100px;
+      }
+      .footLeft{
+        font-family: bebra;
+        color: white;
+        font-size: 100px;
+        text-align: center;
+      }
+      .support, .footNum{
+        font-family: bebra;
+        color: white;
+        font-size: 40px;
+        text-align: center;
+      }
+      .footNum{
+        margin-bottom: 10vh;
+      }
+      .footTxt{
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        line-height: 1.5;
+        font-size: 16px;
+        text-align: center;
+      }
+      .hours{
+        display: flex;
+        margin-top: 30px;
+        justify-content: center;
+      }
+      .hoursLeft{
+        margin-right: 10%;
+      }
+      .budni{
+        margin-bottom: 10px;
+      }
+      .flex2{
+        
+        align-items: center;
+        padding: 40px 40px;
+      }
+      .flex2right{
+        display: flex;
+        align-items: center;
+      }
+      .flex2left{
+        margin-left: 20%;
+      }
+      .marshLogoFlex{
+        width: 100%;
+      }
+      .kaakshki{
+        margin-left: 100px;
+      }
+      .footTxtt{
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
+      
+      /* PRODUCTS--------------------------------------------*/
+      
+      /*HEADPHONES-----------------------------------------------------------*/
+      
+      .headerProductsHeadphones{
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        font-family: bebra;
+        font-size: 43px;
+        width: 100%;
+      }
+      .headDiv, .speakersDiv .ampsDiv{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        cursor: pointer;
+      }
+      .speakersDiv, .ampsDiv{
+        background-color: black;
+        width: 100%;
+        text-align: center;
+      }
+      .speakersDiv:hover{
+        font-size: 42px;
+      }
+      .ampsDiv:hover{
+        font-size: 42px;
+      }
+      .categoriesHeadphones{
+        display: flex;
+        justify-content: center;
+        color: white;
+        font-family: bebra;
+        font-size: 30px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: 6%;
+      }
+      .cat{
+        margin-right: 15px;
+        cursor: pointer;
+      }
+      .catCheck{
+        margin-right: 15px;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      .gridHeadphones{ 
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+      .block1Img, .block2Img, .block3Img{
+        width: 100%;
+      }
+      .morz{
+        margin-bottom: 6vh;
+      }
+      .gridHBlock2{
+        grid-row: 2/3;
+        grid-column: 1/3;
+      }
+      .gridHBlock1{
+        grid-column: 1/3;
+      }
+      .gridHBlock1, .gridHBlock2, .gridHBlock3{
+        margin: 5px;
+      }
+      .blockTxtBig{
+        color: white;
+        font-family: bebra;
+        font-size: 35px;
+        cursor: pointer;
+        margin-left: 5px;
+        text-align: justify;
+      }
+      .blockTxtSmall{
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        line-height: 1.5;
+        text-align: justify;
+      }
+      .grid2Headphones{
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 30px;
+        margin-bottom: 50px;
+      }
+      .grid2Block1Img{
+        width: 100%;
+      }
+      .grid2Block1ImgDiv{
+        margin: 5px;
+      }
+      .txtBottom{
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
+        text-align: justify;
+        margin-bottom: 80px;
+      }
+      
+      /*SPeakers----------------------------------------------------------------------------*/
+      
+      .grid2Speakers{
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 30px;
+        margin-bottom: 50px;
+      }
+      .grid2Block1S{
+        grid-column: 1/3;
+        grid-row: 1/3;
+      }
+      
+      /*CARDS----------------------------------------------------------*/
+      
+      .h1{
+        font-family: bebra;
+        color: white;
+        font-size: 70px;
+        text-align: center;
+      }
+      .glavPhotoDiv{
+        display: flex;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 1vh;
+      }
+      .glavPhoto{
+        width: 100%;
+      }
+      .firstTxtBlock{
+        margin-left: 10%;
+        text-align: justify;
+      }
+      .hTxt{
+        color: white;
+        font-family: bebra;
+        font-size: 35px;
+      }
+      .mTxt{
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+        width: 90%;
+      }
+      .bl1, .bl2, .bl3, .bl4, .bl5{
+       width: 450px;
+      }
+      .photo{
+       width: 100%;
+      }
+      .hh{
+        color: white;
+        font-family: bebra;
+        font-size: 35px;
+      }
+      .txt{
+        font-size: 14px;
+        line-height: 1.5;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: justify;
+      }
+      .bl1{
+        margin-right: 10%;
+        margin-left: 10%;
+        width: 80%;
+        margin-top: 5vh;
+      }
+      .bl2{
+        margin-right: 10%;
+        margin-left: 10%;
+        width: 80%;
+      }
+      .bl3{
+        margin-right: 10%;
+        margin-left: 10%;
+        width: 80%;
+      }
+      .bl4{
+        margin-right: 10%;
+        margin-left: 10%;
+        width: 80%;
+      }
+      .bl5{
+        margin-right: 10%;
+        margin-left: 10%;
+        width: 80%;
+        margin-bottom: 5vh;
+      }
+      .Pl{
+        height: 15px;
+        cursor: pointer;
+      }
+      .str{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .productDetails{
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 80px;
+      }
+      .lStr{
+        color: white;
+        font-family: bebra;
+        font-size: 30px;
+      }
+      .buyGrid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 40px 1fr;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 30px;
+        height: 300px;
+      }
+      .strDiv{
+        height: 40px;
+      }
+      .strQ{
+        width: 40px;
+      }
+      .usa{
+        height: 40px;
+        background-color: #403f3f;
+        border-width: 0px;
+        padding-left: 5%;
+        color: white; 
+        font-family: bebra;
+        font-size: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 3%;
+      }
+      .qwe{
+        color: white; 
+        font-family: bebra;
+        font-size: 30px;
+        text-decoration: underline;
+      }
+      .sstr{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .infoDiv{
+        text-align: end;
+        justify-content: end;
+        margin-right: 10%;
+        height: 0; /* Начальное значение для скрытого состояния */
+        opacity: 0; /* Начальная непрозрачность */
+        overflow: hidden; /* Скрытие переполнения */
+        transition: height 0.5s ease, opacity 0.5s ease; /* Переходы для height и opacity */
+      }
+      .infoDiv.show {
+        height: auto; /* Высота при показе (должна быть фиксированной или заданной) */
+        opacity: 1; /* Полная непрозрачность */
+      }
+      .infA{
+        font-size: 14px;
+        line-height: 1.5;
+        color: #737272;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .infB{
+        color: white; 
+        font-family: bebra;
+        font-size: 23px;
+        margin-bottom: 15px;
+      }
+      .infoCol1{
+        margin-right: 30px;
+      }
+      .strDiv{
+        cursor: pointer;
+      }
+      .spisok{
+        background-color: #737272;
+        color: black;
+        margin-right: 10px;
+        height: 36vh;
+      }
+      .qw{
+        font-family: bebra;
+        font-size: 30px;
+        padding-left: 10px;
+        cursor: pointer;
+      }
+      .qw:hover{
+        background-color: #2a292a;
+      }
+      .botLeft, .botRight{
+        margin-top: 30px;
+      }
+      .ppp{
+        display: flex;
+        justify-content: space-between;
+        margin: 10%;
+      }
+      .hz{
+        width: 95%;
+      }
+      
+      /*SIGN------------------------------------------------------------*/
+      
+      .spider{
+        display: none;
+        transform: rotate(90deg);
+      }
+      .spiderDiv{
+        position: relative;
+        height: 200vh;
+        display: none;
+      }
+      .sign{
+        background-color: #403f3f;
+        left: 5%;
+        border-radius: 35px;
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 15px 15px 15px 15px;
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+      }
+      .aaaw{
+        position: relative;
+      }
+      .signLeft{
+        width: 100%;
+        border-radius: 35px;
+      }
+      .sTxt{
+        color: white; 
+        font-family: bebra;
+        font-size: 40px;
+        text-align: center;
+      }
+      .siTxt{
+        font-size: 16px;
+        line-height: 1.5;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        cursor: pointer;
+        margin-bottom: 1vh;
+        text-align: center    ;
+      }
+      .siTxt:hover{
+        text-decoration: underline;
+        color: #220767;
+      }    
+      .signGrid{
+        display: flex;
+      }
+      .signEmail{
+        width: 100%;
+        margin-top: 10px;
+      }         
+      .signPass{
+        width: 100%;
+        margin-top: 10px;
+      }
+      .signName{
+        margin-right: 10px;
+      }
+      .signInput{
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #2a292a;
+        border-width: 0px;
+        padding: 0;
+        padding-left: 10px;
+        padding-top: 3px;
+        color: white; 
+        font-family: bebra;
+        font-size: 30px;
+      }
+      .signInput::placeholder {
+        color: rgb(149, 146, 146); 
+        font-family: bebra;
+        font-size: 30px;
+      }
+      .signInput::-webkit-input-placeholder {
+        color: rgb(149, 146, 146); 
+        font-family: bebra;
+        font-size: 30px;
+      }
+      .signInput::-moz-placeholder {
+        color: rgb(149, 146, 146);
+        font-size: 30px;
+        font-family: bebra; 
+      }
+      .signInput:-ms-input-placeholder {
+        color: rgb(149, 146, 146); 
+        font-family: bebra;
+        font-size: 30px;
+      }
+      .ok{
+        display: flex;
+        font-size: 16px;
+        line-height: 1.5;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+      }
+      .chch{
+        accent-color: #2a292a;
+      }
+      .check{
+        margin-right: 10px;
+      }
+      .create{
+        width: 100%;
+        background-color: #737272;
+        cursor: pointer;
+        color: white; 
+        font-family: bebra;
+        font-size: 40px;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box;
+        border-bottom-right-radius: 35px;
+        border-bottom-left-radius: 35px;
+      }
+      }
+
+      @media screen and (min-width: 0px) and (max-width: 424px){
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0px 30px;
+          height: 10vh; /* Исходная высота блока */
+          position: relative; /* Для позиционирования псевдоэлемента */
+          overflow: hidden; /* Чтобы скрыть выходящий за пределы элемент */
+      }
+      .header::before {
+          content: "";
+          position: absolute;
+          top: -100%; /* Начальное положение за пределами контейнера */
+          left: 0; /* По горизонтали остаётся на месте */
+          width: 100%;
+          height: 100%; /* Высота псевдоэлемента равна высоте блока */
+          background-color: rgb(0, 0, 0); /* Цвет фона */
+          transition: top 0.5s ease; /* Плавный переход */
+      }
+      .none{
+        display: none;
+      }
+      .header.active::before {
+          top: 0; /* Перемещение в видимую область */
+      }
+      .header.active {
+          height: 100vh; /* Новая высота блока при активации */
+      }
+        a {
+          color: inherit; /* Цвет ссылок становится таким же, как цвет родительского элемента */
+          text-decoration: none; /* Убираем подчёркивание */
+          background-color: transparent; /* Фон прозрачный, чтобы не выделяться */
+          cursor: pointer; /* Оставляем указатель, чтобы было понятно, что ссылка кликабельна */
+        }
+        .upArrow{
+          height: 50px;
+        }
+        .upArrowDiv{
+          position: sticky;
+          top: 20px;
+          margin-right: 20px;
+          display: none;
+          cursor: pointer;
+          z-index: 3;
+        }
+        .activeMenu{
+          z-index: 2;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          position: absolute;
+          top: 4vh;
+        }
+        .about{
+          margin-right: 40px;
+          font-family: bebra;
+          font-size: 60px;
+          margin-bottom: 6vh;
+          cursor: pointer;
+        }
+        .about:hover{
+          color: black;
+          text-shadow: 1px 0 1px white, 
+        0 1px 1px white, 
+        -1px 0 1px white, 
+        0 -1px 1px white;
+        }
+        .marshLogo{
+            width: 40%;
+            margin-top: 15px;
+        }
+        .menuSvg{
+            width: 30px;
+        }
+        .menuDiv{
+            width: 30px;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .aa{
+            width: 100%;
+        }
+        @font-face {
+          font-family: 'bebra'; 
+          src: url(../fonts/BebasNeue-Regular.ttf); 
+        }
+        .wel{
+            font-family: bebra;
+            margin-top: 40px;
+            font-size: 50px;
+            color: white;
+            width: 100%;
+            text-align: center  ;
+        }
+        .r{
+            width: 100%;
+            margin-top: 20px;
+        }
+        .rr{
+            display: flex;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        .tt{
+            display: flex;
+            justify-content:center;
+            color: white;
+            font-family: bebra;
+            font-size: 30px;
+        }
+        .t{
+            width: 90%;
+            text-align: justify;
+            margin: 70px 10% 70px 10%;
+        }
+        .flex1{
+            margin: 0px 10% 100px 10%;
+        }
+        .lll{
+          width: 100%;
+          margin-bottom: 15px;
+        }
+        .llll{
+          width: 100%;
+          height: 100%;
+        }
+        .rrr{
+            color: white;
+            text-align: justify;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 20px;
+            width: 100%;
+            line-height: 1.5;
+        }
+          .items-wrap {
+            position: relative;
+            display: flex;
+            overflow: hidden;
+          }
+          .items {
+            flex-shrink: 0;
+            display: flex;
+            gap: 20px;
+            justify-content: space-around;
+            align-items: center;
+          }
+          .item {
+            width: 400px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            transition: all 0.1s ease-in-out;
+            font-family: bebra;
+            font-size: 55px;
+          }
+          .marquee {
+            animation: scroll 40s linear infinite;
+          }
+          @keyframes scroll {
+            from {
+              transform: translateX(0);
+            }
+            to {
+              transform: translateX(-100%);
+            }
+          }
+        hr{
+            color: white;
+            width: 100%;
+        }
+        .grid1{
+          margin-left: 10%;
+          margin-right: 10%;
+          margin-top: 60px;
+          margin-bottom: 60px;
+        }
+        .n1{
+          display: none;
+        }
+        .sold{
+          grid-column: 1/4;
+          background-color: #403f3f;
+          margin-bottom: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 35vh;
+        }
+        .rev{
+          grid-column: 4/8;
+          background-color: #403f3f;
+          margin-bottom: 20px;
+          flex-direction: column;
+          justify-content: space-between;
+          display: flex;
+          height: 35vh;
+        }
+        .emp{
+          grid-column: 1/4;
+          background-color: #403f3f;
+          flex-direction: column;
+          justify-content: space-between;
+          display: flex;
+          height: 35vh;
+          margin-bottom: 20px;
+        }
+        .n2{
+          display: none;
+        }
+        .artist{
+          grid-column: 4/8;
+          background-color: #403f3f;
+          flex-direction: column;
+          justify-content: space-between;
+          display: flex;
+          height: 35vh;
+        }
+        .numSold{
+          font-family: bebra;
+          font-size: 70px;
+          color: white;
+          margin-left: 10px;
+        }
+        .txtSold{
+          color: white;
+          margin-left: 10px;
+          font-family: bebra;
+          font-size: 35px;
+        }
+        .i {
+          position: relative;
+          overflow: hidden; /* Скрыть все, что выходит за пределы контейнера */
+          margin-bottom: 50px;
+        }
+        .aaa {
+          width: 100%;
+          z-index: -1;
+        }
+        .text-container {
+          height: 0px; /* Высота контейнера, подберите по своему усмотрению */
+          overflow: hidden; /* Скрыть тексты, которые выходят за пределы */
+          /* Установить относительное позиционирование для контейнера текста */
+          z-index: 1;
+        }
+        .text {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 100%; /* Начальное положение за пределами видимости */
+          opacity: 0; /* Начальная прозрачность */
+          animation: slideIn 13s infinite; /* Анимация */
+          font-family: bebra;
+          font-size: 60px;
+          color: white;
+        }
+        /* Определяем ключевые кадры для анимации */
+        @keyframes slideIn {
+          0%, 33% {
+              top: 100%; /* Текст вне видимости */
+              opacity: 0; /* Прозрачный */
+          }
+          10%, 23% {
+              top: 25%; /* Показать текст (центрируем с учетом высоты текста) */
+              opacity: 1; /* Полная видимость */
+          }
+          30%, 100% {
+              top: -100%; /* Текст снова вне видимости */
+              opacity: 0; /* Прозрачный */
+          }
+        }
+        /* Добавляем задержку для каждого текста */
+        .text:nth-child(1) {
+          animation-delay: 0s; /* Первый текст появляется сразу */
+        }
+        .text:nth-child(2) {
+          animation-delay: 3s; /* Второй текст появляется через 3 секунды */
+          display: flex;
+          justify-content: right;
+        }
+        .text:nth-child(3) {
+          animation-delay: 6s; /* Третий текст появляется через 6 секунд */
+        }
+        .text:nth-child(4) {
+          animation-delay: 9s; /* Четвертый текст появляется через 9 секунд */
+          display: flex;
+          justify-content: center;
+        }
+        .grid2{
+          margin-top: 2vh;
+          margin-bottom: 7vh;
+        }
+        .headPhoto{
+          width: 100%;
+        }
+        .headphones{
+          position: relative;
+        }
+        .headTxt{
+          position: absolute;
+          background-color: black;
+          font-family: bebra;
+          color: white;
+          font-size: 40px;
+          display: flex;
+          width: 60%;
+          justify-content: center;
+          align-items: center;
+          height: 70px;
+          cursor: pointer;
+        }
+        .hheadTxt{
+          position: absolute;
+          background-color: black;
+          font-family: bebra;
+          color: white;
+          font-size: 40px;
+          width: 60%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 70px;
+          cursor: pointer;
+        }
+        .headTxt:hover{
+          background-color: white;
+          color: black;
+        }
+        .hisPhoto6{
+          width: 100%;
+        }
+        .hisPhoto6two{
+          width: 100px;
+        }
+        .hisPhoto1Div{
+          display: flex;
+          justify-content:end;
+          margin-right: 10%;
+          margin-left: 10%;
+          opacity: 0;
+          transform: translateY(160px);
+        }
+        .hisPhoto1Div.element-show {
+          opacity: 1;
+          transition: all 1s;
+          transform: translateY(0%);
+        }
+        .hisPhoto1{
+          width: 100%;
+        }
+        .block1{
+          display: flex;
+          flex-direction: column; 
+          opacity: 0;
+          margin-top: 5vh;
+          transform: translateY(160px);
+        }
+        .block1.element-show {
+          opacity: 1;
+          transition: all 1s;
+          transform: translateY(0%);
+        }
+        .block2{
+          margin-left: 10%;
+          margin-right: 10%;
+          display: flex;
+          flex-direction: column; 
+          opacity: 0;
+          transform: translateY(160px);
+          margin-bottom: 5vh;
+        }
+        .block2.element-show {
+          opacity: 1;
+          transition: all 1s;
+          transform: translateY(0%);
+        }
+        .hisphoto6Div{
+          opacity: 0;
+          transform: translateY(160px);
+        }
+        .hisphoto6Div.element-show {
+          opacity: 1;
+          transition: all 1s;
+          transform: translateY(0%);
+        }
+        .block3{
+          display: flex;
+          flex-direction: column; 
+          min-height: 110vh;
+          opacity: 0;
+          margin-top: 10px;
+          transform: translateY(160px);
+        }
+        .block3.element-show {
+          opacity: 1;
+          transition: all 1s;
+          transform: translateY(0%);
+        }
+        .hisphoto9Div{
+          opacity: 0;
+          transform: translateY(160px);
+        }
+        .hisphoto9Div.element-show {
+          opacity: 1;
+          transition: all 1s;
+          transform: translateY(0%);
+        }
+        .hisphoto2Div{
+          margin-right: 10%;
+          margin-left: 10%;
+          margin-bottom: 5vh;
+        }
+        .hisPhoto2{
+          width: 100%;
+        }
+        .hisphoto3Div{
+          top: 50vh;
+          margin-right: 10%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: end;
+          margin-left: 10%;
+          margin-bottom: 5vh;
+        }
+        .hisPhoto3Txt{
+          width: 100%;
+          text-align: justify;
+          color: white;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        .hisPhoto2Txt{
+          color: white;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 16px;
+          width: 100%;
+          line-height: 1.5;
+        }
+        .hisPhoto2, .hisPhoto3, .hisPhoto4, .hisPhoto5, .hisPhoto7{
+          margin-bottom: 20px;
+          width: 100%;
+        }
+        .hisPhoto3{
+          width: 60%;
+        }
+        .hisPhoto3h, .hisPhoto4h, .hisPhoto6h{
+          color: white;
+          font-family: bebra;
+          font-size: 40px;
+        }
+        .hisphoto4Div{
+          left: 10%;
+          width: 100%;
+        }
+        .hisPhoto4Txt{
+          width: 100%;
+          color: white;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 16px;
+          text-align: justify;
+          margin-bottom: 20px;
+          line-height: 1.5;
+        }
+        .hisphoto5Div{
+          right: 80px;
+          top: 80vh;
+          width: 100%;
+        }
+        .hisPhoto5{
+          width: 70%;
+        }
+        .hisPhoto5Txt{
+          width: 100%;
+          color: white;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 16px;
+          text-align: justify;
+          line-height: 1.5;
+        }
+        .photoBigDiv6{
+          margin-bottom: 20px;
+          width: 100%;
+        }
+        .pp{
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          margin-bottom: 5vh;
+        }
+        .hisphoto6Div{
+          margin-left: 10%;
+          margin-right: 10%;
+          margin-bottom: 5vh;
+        }
+        .hisPhoto6two{
+          width: 70%;
+        }
+        .hisPhoto6Txt{
+          color: white;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 16px;
+          text-align: justify;
+          line-height: 1.5;
+          width: 100%;
+        }
+        .hisphoto7Div{
+          right: 80px;
+        }
+        .hisPhoto7Txt{
+          width: 40%;
+          margin-left: 10%;
+          color: white;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 16px;
+          text-align: justify;
+          line-height: 1.5;
+          margin-bottom: 5vh;
+        }
+        .hisphoto8Div{
+          top: 50vh;
+          display: flex;
+          align-items: flex-end;
+          text-align: justify;
+          justify-content: space-between;
+          right: 80px;
+          flex-direction: column-reverse;
+          margin-right: 10%;
+          margin-left: 10%;
+        }
+        .hisPhoto8{
+          width: 100%;
+        }
+        .ppp{
+          margin-right: 20px;
+        }
+        .pppp{
+          width: 100%;
+          margin-left: 10%;
+        }
+        .hisPhoto8Txt{
+          color: white;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 16px;
+          text-align: justify;
+          line-height: 1.5;
+          width: 50%;
+          margin-bottom: 5vh;
+        }
+        .hisphoto9Div{
+          left: 80px;
+          right: 80px;
+          margin-top: 15vh;
+          display: none;
+        }
+        .hisPhoto9{
+          width: 100%;
+        }
+        .hisPhoto{
+          margin-bottom: 10vh;
+        }
+        .star{
+          height: 15px;
+          margin-left: 15px;
+        }
+        .strLeft{
+          height: 30px;
+          cursor: pointer;
+        }
+        .strRight{
+          height: 30px;
+          cursor: pointer;
+          transform: rotate(3.142rad);
+        }
+        .revTop{
+          display: flex;
+          justify-content: space-between;
+          font-family: bebra;
+          color: white;
+          font-size: 30px;
+          align-items: center;
+          margin-bottom: 10px;
+        }
+        .reviews{
+          text-align: center;
+          margin-left: 10%;
+          margin-right: 10%;
+          margin-bottom: 80px;
+        }
+        .revStar{
+          display: flex;
+          align-items: center;
+        }
+        .revText{
+          font-family: bebra;
+          color: white;
+          font-size: 20px;
+          text-align:justify;
+          margin-bottom: 20px;
+          height: 30vh;
+        }
+        .revBottom{
+          display: flex;
+          font-family: bebra;
+          color: white;
+          font-size: 40px;
+          justify-content: center;
+        }
+        .num{
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+        .rightArrow{
+          height: 30px;
+        }
+        .subscribe{
+          margin-top: 5vh;
+        }
+        .subTxt1, .subTxt2, .subTxt3{
+          font-family: bebra;
+          font-size: 60px;
+          color: white;
+        }
+        .subTxt1{
+          margin-left: 3%;
+          text-align: center;
+        }
+        .subTxt2{
+          margin-left: 3%;
+          text-align: center;
+        }
+        .subTxt3{
+          text-align: right;
+          margin-right:6%;
+        }
+        .subForm{
+          text-align: right;
+          margin-left: 5%;
+          justify-content: space-between;
+          margin-right: 5%;
+          align-items: end;
+          margin-bottom: 50px;
+          margin-top: 15px;
+        }
+        .www{
+          display: flex;
+        }
+        .subInp{
+          width: 90%;
+          height: 50px;
+          background-color: #403f3f;
+          border-width: 0px;
+          padding-top: 5px;
+          padding-left: 20px;
+          color: white; 
+          font-family: bebra;
+          font-size: 40px;
+        }
+        .subImgDiv{
+          display: none;
+        }
+        .subInp::placeholder {
+          color: white; 
+          font-family: bebra;
+          font-size: 40px;
+        }
+        .subInp::-webkit-input-placeholder {
+          color: white; 
+          font-family: bebra;
+          font-size: 40px;
+        }
+        .subInp::-moz-placeholder {
+          color: white;
+          font-size: 40px;
+          font-family: bebra; 
+        }
+        .subInp:-ms-input-placeholder {
+          color: white; 
+          font-family: bebra;
+          font-size: 40px;
+        }
+        .rightArrowDiv{
+          height: 55px;
+          width: 55px;
+          background-color: black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+        }
+        .subEnterTxt{
+          margin-top: 10px;
+          font-family: Arial, Helvetica, sans-serif;
+          color: white;
+          text-align: left;
+          line-height: 1.5;
+        }
+        input:focus {
+            outline: none;
+        }
+        .footer{
+          background-color: black;
+          color: white;
+          padding-top: 10vh;
+        }
+        .footTop{
+          justify-content: space-between;
+          margin-bottom: 100px;
+        }
+        .footLeft{
+          font-family: bebra;
+          color: white;
+          font-size: 100px;
+          text-align: center;
+        }
+        .support, .footNum{
+          font-family: bebra;
+          color: white;
+          font-size: 30px;
+          text-align: center;
+        }
+        .footNum{
+          margin-bottom: 10vh;
+        }
+        .footTxt{
+          font-family: Arial, Helvetica, sans-serif;
+          color: white;
+          line-height: 1.5;
+          font-size: 14px;
+          text-align: center;
+        }
+        .footRight{
+          margin-left: 4%;
+          margin-right: 4%;
+        }
+        .hours{
+          display: flex;
+          margin-top: 30px;
+          justify-content: center;
+        }
+        .hoursLeft{
+          margin-right: 10%;
+        }
+        .budni{
+          margin-bottom: 10px;
+        }
+        .flex2{
+          align-items: center;
+          padding: 40px 40px;
+        }
+        .flex2right{
+          display: flex;
+          align-items: center;
+        }
+        .flex2left{
+          margin-left: 20%;
+        }
+        .marshLogoFlex{
+          width: 100%;
+        }
+        .kaakshki{
+          margin-left: 100px;
+        }
+        .footTxtt{
+          font-family: Arial, Helvetica, sans-serif;
+          color: white;
+          line-height: 1.5;
+          margin-bottom: 8px;
+        }
+  
+        /* PRODUCTS--------------------------------------------*/
+        
+        
+        /*HEADPHONES-----------------------------------------------------------*/
+        
+        .headerProductsHeadphones{
+          display: flex;
+          justify-content: space-between;
+          color: white;
+          font-family: bebra;
+          font-size: 43px;
+          width: 100%;
+        }
+        .headDiv, .speakersDiv .ampsDiv{
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          cursor: pointer;
+        }
+        .speakersDiv, .ampsDiv{
+          background-color: black;
+          width: 100%;
+          text-align: center;
+        }
+        .speakersDiv:hover{
+          font-size: 42px;
+        }
+        .ampsDiv:hover{
+          font-size: 42px;
+        }
+        .categoriesHeadphones{
+          display: flex;
+          justify-content: center;
+          color: white;
+          font-family: bebra;
+          font-size: 30px;
+          margin-top: 30px;
+          margin-bottom: 30px;
+          margin-left: 6%;
+        }
+        .cat{
+          margin-right: 15px;
+          cursor: pointer;
+        }
+        .catCheck{
+          margin-right: 15px;
+          cursor: pointer;
+          text-decoration: underline;
+        }
+        .gridHeadphones{
+          margin-left: 10%;
+          margin-right: 10%;
+        }
+        .block1Img, .block2Img, .block3Img{
+          width: 100%;
+        }
+        .morz{
+          margin-bottom: 6vh;
+        }
+        .gridHBlock2{
+          grid-row: 2/3;
+          grid-column: 1/3;
+        }
+        .gridHBlock1{
+          grid-column: 1/3;
+        }
+        .gridHBlock1, .gridHBlock2, .gridHBlock3{
+          margin: 5px;
+        }
+        .blockTxtBig{
+          color: white;
+          font-family: bebra;
+          font-size: 35px;
+          cursor: pointer;
+          margin-left: 5px;
+          text-align: justify;
+        }
+        .blockTxtSmall{
+          color: white;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 15px;
+          line-height: 1.5;
+          text-align: justify;
+        }
+        .grid2Headphones{
+          margin-left: 10%;
+          margin-right: 10%;
+          margin-top: 30px;
+          margin-bottom: 50px;
+        }
+        .grid2Block1Img{
+          width: 100%;
+        }
+        .grid2Block1ImgDiv{
+          margin: 5px;
+        }
+        .txtBottom{
+          color: white;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 16px;
+          line-height: 1.5;
+          margin-left: 10%;
+          margin-right: 10%;
+          width: 80%;
+          text-align: justify;
+          margin-bottom: 80px;
+        }
+        
+        /*SPeakers----------------------------------------------------------------------------*/
+        
+        .grid2Speakers{
+          margin-left: 10%;
+          margin-right: 10%;
+          margin-top: 30px;
+          margin-bottom: 50px;
+        }
+        .grid2Block1S{
+          grid-column: 1/3;
+          grid-row: 1/3;
+        }
+        
+        /*CARDS----------------------------------------------------------*/
+        
+        .h1{
+          font-family: bebra;
+          color: white;
+          font-size: 70px;
+          text-align: center;
+        }
+        .glavPhotoDiv{
+          display: flex;
+          margin-left: 10%;
+          margin-right: 10%;
+          margin-bottom: 1vh;
+        }
+        .glavPhoto{
+          width: 100%;
+        }
+        .firstTxtBlock{
+          margin-left: 10%;
+          text-align: justify;
+        }
+        .hTxt{
+          color: white;
+          font-family: bebra;
+          font-size: 35px;
+        }
+        .mTxt{
+          color: white;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 14px;
+          line-height: 1.5;
+          width: 90%;
+        }
+        .bl1, .bl2, .bl3, .bl4, .bl5{
+         width: 450px;
+        }
+        .photo{
+         width: 100%;
+        }
+        .hh{
+          color: white;
+          font-family: bebra;
+          font-size: 35px;
+        }
+        .txt{
+          font-size: 14px;
+          line-height: 1.5;
+          color: white;
+          font-family: Arial, Helvetica, sans-serif;
+          text-align: justify;
+        }
+        .bl1{
+          margin-right: 10%;
+          margin-left: 10%;
+          width: 80%;
+          margin-top: 5vh;
+        }
+        .bl2{
+          margin-right: 10%;
+          margin-left: 10%;
+          width: 80%;
+        }
+        .bl3{
+          margin-right: 10%;
+          margin-left: 10%;
+          width: 80%;
+        }
+        .bl4{
+          margin-right: 10%;
+          margin-left: 10%;
+          width: 80%;
+        }
+        .bl5{
+          margin-right: 10%;
+          margin-left: 10%;
+          width: 80%;
+          margin-bottom: 5vh;
+        }
+        .Pl{
+          height: 15px;
+          cursor: pointer;
+        }
+        .str{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .productDetails{
+          margin-left: 10%;
+          margin-right: 10%;
+          margin-bottom: 80px;
+        }
+        .lStr{
+          color: white;
+          font-family: bebra;
+          font-size: 30px;
+        }
+        .buyGrid{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 40px 1fr;
+          margin-left: 5%;
+          margin-right: 5%;
+          margin-bottom: 30px;
+          height: 300px;
+        }
+        .strDiv{
+          height: 40px;
+        }
+        .strQ{
+          width: 40px;
+        }
+        .usa{
+          height: 40px;
+          background-color: #403f3f;
+          border-width: 0px;
+          padding-left: 5%;
+          color: white; 
+          font-family: bebra;
+          font-size: 30px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-right: 3%;
+        }
+        .qwe{
+          color: white; 
+          font-family: bebra;
+          font-size: 30px;
+          text-decoration: underline;
+        }
+        .sstr{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .infoDiv{
+          text-align: end;
+          justify-content: end;
+          margin-right: 10%;
+          height: 0; /* Начальное значение для скрытого состояния */
+          opacity: 0; /* Начальная непрозрачность */
+          overflow: hidden; /* Скрытие переполнения */
+          transition: height 0.5s ease, opacity 0.5s ease; /* Переходы для height и opacity */
+        }
+        .infoDiv.show {
+          height: auto; /* Высота при показе (должна быть фиксированной или заданной) */
+          opacity: 1; /* Полная непрозрачность */
+        }
+        .infA{
+          font-size: 14px;
+          line-height: 1.5;
+          color: #737272;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        .infB{
+          color: white; 
+          font-family: bebra;
+          font-size: 23px;
+          margin-bottom: 15px;
+        }
+        .infoCol1{
+          margin-right: 30px;
+        }
+        .strDiv{
+          cursor: pointer;
+        }
+        .spisok{
+          background-color: #737272;
+          color: black;
+          margin-right: 10px;
+          height: 36vh;
+        }
+        .qw{
+          font-family: bebra;
+          font-size: 30px;
+          padding-left: 10px;
+          cursor: pointer;
+        }
+        .qw:hover{
+          background-color: #2a292a;
+        }
+        .botLeft, .botRight{
+          margin-top: 30px;
+        }
+        .ppp{
+          display: flex;
+          justify-content: space-between;
+          margin: 10%;
+        }
+        .hz{
+          width: 95%;
+        }
+        
+        /*SIGN------------------------------------------------------------*/
+        
+        .spider{
+          display: none;
+          transform: rotate(90deg);
+        }
+        .spiderDiv{
+          position: relative;
+          height: 200vh;
+          display: none;
+        }
+        .sign{
+          background-color: #403f3f;
+          left: 5%;
+          border-radius: 35px;
+          margin-left: 5%;
+          margin-right: 5%;
+          padding: 15px 15px 15px 15px;
+          margin-top: 10vh;
+          margin-bottom: 10vh;
+        }
+        .aaaw{
+          position: relative;
+        }
+        .signLeft{
+          width: 100%;
+          border-radius: 35px;
+        }
+        .sTxt{
+          color: white; 
+          font-family: bebra;
+          font-size: 40px;
+          text-align: center;
+        }
+        .siTxt{
+          font-size: 16px;
+          line-height: 1.5;
+          color: white;
+          font-family: Arial, Helvetica, sans-serif;
+          cursor: pointer;
+          margin-bottom: 1vh;
+          text-align: center    ;
+        }
+        .siTxt:hover{
+          text-decoration: underline;
+          color: #220767;
+        }    
+        .signGrid{
+          display: flex;
+        }
+        .signEmail{
+          width: 100%;
+          margin-top: 10px;
+        }         
+        .signPass{
+          width: 100%;
+          margin-top: 10px;
+        }
+        .signName{
+          margin-right: 10px;
+        }
+        .signInput{
+          width: 100%;
+          box-sizing: border-box;
+          background-color: #2a292a;
+          border-width: 0px;
+          padding: 0;
+          padding-left: 10px;
+          padding-top: 3px;
+          color: white; 
+          font-family: bebra;
+          font-size: 30px;
+        }
+        .signInput::placeholder {
+          color: rgb(149, 146, 146); 
+          font-family: bebra;
+          font-size: 30px;
+        }
+        .signInput::-webkit-input-placeholder {
+          color: rgb(149, 146, 146); 
+          font-family: bebra;
+          font-size: 30px;
+        }
+        .signInput::-moz-placeholder {
+          color: rgb(149, 146, 146);
+          font-size: 30px;
+          font-family: bebra; 
+        }
+        .signInput:-ms-input-placeholder {
+          color: rgb(149, 146, 146); 
+          font-family: bebra;
+          font-size: 30px;
+        }
+        .ok{
+          display: flex;
+          font-size: 16px;
+          line-height: 1.5;
+          color: white;
+          font-family: Arial, Helvetica, sans-serif;
+          margin-top: 1vh;
+          margin-bottom: 1vh;
+        }
+        .chch{
+          accent-color: #2a292a;
+        }
+        .check{
+          margin-right: 10px;
+        }
+        .create{
+          width: 100%;
+          background-color: #737272;
+          cursor: pointer;
+          color: white; 
+          font-family: bebra;
+          font-size: 40px;
+          text-align: center;
+          padding: 10px;
+          box-sizing: border-box;
+          border-bottom-right-radius: 35px;
+          border-bottom-left-radius: 35px;
+        }
+        }
+
+
+        @media screen and (min-width: 1601px) {
+          .header{
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0px 60px;
+              height: 170px;
+              position: relative; /* Для позиционирования псевдоэлемента */
+              overflow: hidden; /* Чтобы скрыть выходящий за пределы элемент */
+          }
+          .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 100%; /* Начальное положение за пределами контейнера */
+            width: 100%;
+            height: 100%;
+            background-color: black; /* Цвет фона */
+            transition: left 0.5s ease; /* Плавный переход */
+          }
+          .none{
+            display: none;
+          }
+          .header.active::before {
+            left: 0; /* Перемещение в видимую область */
+          }
+          a {
+            color: inherit; /* Цвет ссылок становится таким же, как цвет родительского элемента */
+            text-decoration: none; /* Убираем подчёркивание */
+            background-color: transparent; /* Фон прозрачный, чтобы не выделяться */
+            cursor: pointer; /* Оставляем указатель, чтобы было понятно, что ссылка кликабельна */
+          }
+          .upArrow{
+            height: 80px;
+          }
+          .upArrowDiv{
+            position: sticky;
+            top: 20px;
+            margin-right: 20px;
+            display: none;
+            cursor: pointer;
+            z-index: 3;
+          }
+          .activeMenu{
+            z-index: 2;
+            color: white;
+            display: flex;
+          }
+          .about{
+            margin-right: 40px;
+            font-family: bebra;
+            font-size: 64px;
+            cursor: pointer;
+          }
+          .about:hover{
+            color: black;
+            text-shadow: 1px 0 1px white, 
+          0 1px 1px white, 
+          -1px 0 1px white, 
+          0 -1px 1px white;
+          }
+          .marshLogo{
+              width: 40%;
+              margin-top: 15px;
+          }
+          .menuSvg{
+              width: 40px;
+          }
+          .menuDiv{
+              width: 40px;
+              cursor: pointer;
+              z-index: 2;
+          }
+          .aa{
+              width: 100%;
+          }
+          @font-face {
+            font-family: 'bebra'; 
+            src: url(../fonts/BebasNeue-Regular.ttf); 
+          }
+          .wel{
+              font-family: bebra;
+              margin-top: 90px;
+              font-size: 128px;
+              color: white;
+              width: 50%;
+              margin-left: 80px;
+          }
+          .r{
+              width: 30%;
+          }
+          .lll{
+            width: 50%;
+          }
+          .llll{
+            width: 100%;
+          }
+          .rr{
+              display: flex;
+              justify-content: right;
+              margin-right: 80px;
+          }
+          .tt{
+              display: flex;
+              justify-content:center;
+              color: white;
+              font-family: bebra;
+              font-size: 50px;
+          }
+          .t{
+              width: 80%;
+              text-align: center;
+              margin: 100px 0px 100px 0px;
+          }
+          .flex1{
+              display: flex;
+              justify-content: space-between;
+              margin: 0px 80px 100px 80px;
+              align-items: center;
+          }
+          .rrr{
+              color: white;
+              text-align: justify;
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 30px;
+              width: 40%;
+              line-height: 1.5;
+          }
+            .items-wrap {
+              position: relative;
+              display: flex;
+              overflow: hidden;
+            }
+            .items {
+              flex-shrink: 0;
+              display: flex;
+              gap: 20px;
+              justify-content: space-around;
+              align-items: center;
+            }
+            .item {
+              width: 400px;
+              height: 100px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: #fff;
+              transition: all 0.1s ease-in-out;
+              font-family: bebra;
+              font-size: 64px;
+            }
+            .marquee {
+              animation: scroll 40s linear infinite;
+            }
+            @keyframes scroll {
+              from {
+                transform: translateX(0);
+              }
+              to {
+                transform: translateX(-100%);
+              }
+            }
+          hr{
+              color: white;
+              width: 100%;
+          }
+          .grid1{
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: 350px 350px;
+            margin: 100px 80px 100px 80px;
+          }
+          .sold{
+            grid-column: 2/6;
+            background-color: #403f3f;
+            margin-bottom: 20px;
+            margin-right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          }
+          .rev{
+            grid-column: 6/8;
+            background-color: #403f3f;
+            margin-bottom: 20px;
+            flex-direction: column;
+            justify-content: space-between;
+            display: flex;
+          }
+          .emp{
+            grid-column: 1/3;
+            background-color: #403f3f;
+            flex-direction: column;
+            justify-content: space-between;
+            display: flex;
+          }
+          .n2{
+            grid-column: 3/5;
+          }
+          .artist{
+            grid-column: 5/7;
+            background-color: #403f3f;
+            flex-direction: column;
+            justify-content: space-between;
+            display: flex;
+          }
+          .numSold{
+            font-family: bebra;
+            font-size: 128px;
+            color: white;
+            margin-left: 20px;
+          }
+          .txtSold{
+            color: white;
+            margin-left: 20px;
+            font-family: bebra;
+            font-size: 40px;
+          }
+          .i {
+            position: relative;
+            overflow: hidden; /* Скрыть все, что выходит за пределы контейнера */
+            margin-bottom: 100px;
+          }
+          .aaa {
+            width: 100%;
+            z-index: -1;
+          }
+          .text-container {
+            height: 0px; /* Высота контейнера, подберите по своему усмотрению */
+            overflow: hidden; /* Скрыть тексты, которые выходят за пределы */
+            /* Установить относительное позиционирование для контейнера текста */
+            z-index: 1;
+          }
+          .text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 100%; /* Начальное положение за пределами видимости */
+            opacity: 0; /* Начальная прозрачность */
+            animation: slideIn 13s infinite; /* Анимация */
+            font-family: bebra;
+            font-size: 290px;
+            color: white;
+          }
+          /* Определяем ключевые кадры для анимации */
+          @keyframes slideIn {
+            0%, 33% {
+                top: 100%; /* Текст вне видимости */
+                opacity: 0; /* Прозрачный */
+            }
+            10%, 23% {
+                top: 30%; /* Показать текст (центрируем с учетом высоты текста) */
+                opacity: 1; /* Полная видимость */
+            }
+            30%, 100% {
+                top: -100%; /* Текст снова вне видимости */
+                opacity: 0; /* Прозрачный */
+            }
+          }
+          /* Добавляем задержку для каждого текста */
+          .text:nth-child(1) {
+            animation-delay: 0s; /* Первый текст появляется сразу */
+          }
+          .text:nth-child(2) {
+            animation-delay: 3s; /* Второй текст появляется через 3 секунды */
+            display: flex;
+            justify-content: right;
+          }
+          .text:nth-child(3) {
+            animation-delay: 6s; /* Третий текст появляется через 6 секунд */
+          }
+          .text:nth-child(4) {
+            animation-delay: 9s; /* Четвертый текст появляется через 9 секунд */
+            display: flex;
+            justify-content: center;
+          }
+          .grid2{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-bottom: 80px;
+          }
+          .headPhoto{
+            width: 100%;
+          }
+          .headphones{
+            position: relative;
+          }
+          .headTxt{
+            position: absolute;
+            background-color: black;
+            font-family: bebra;
+            color: white;
+            font-size: 70px;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            cursor: pointer;
+          }
+          .hheadTxt{
+            position: absolute;
+            background-color: black;
+            font-family: bebra;
+            color: white;
+            font-size: 70px;
+            width: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            cursor: pointer;
+          }
+          .headTxt:hover{
+            background-color: white;
+            color: black;
+          }
+          .hisPhoto1Div{
+            display: flex;
+            justify-content:end;
+            margin-right: 80px;
+            opacity: 0;
+            transform: translateY(160px);
+          }
+          .hisPhoto1Div.element-show {
+            opacity: 1;
+            transition: all 1s;
+            transform: translateY(0%);
+          }
+          .hisPhoto1{
+            width: 40%;
+          }
+          .block1{
+            position: relative;
+            display: flex;
+            flex-direction: column; 
+            min-height: 100vh;
+            opacity: 0;
+            transform: translateY(160px);
+          }
+          .block1.element-show {
+            opacity: 1;
+            transition: all 1s;
+            transform: translateY(0%);
+          }
+          .block2{
+            position: relative;
+            display: flex;
+            flex-direction: column; 
+            min-height: 90vh;
+            opacity: 0;
+            transform: translateY(160px);
+          }
+          .block2.element-show {
+            opacity: 1;
+            transition: all 1s;
+            transform: translateY(0%);
+          }
+          .hisphoto6Div{
+            opacity: 0;
+            transform: translateY(160px);
+          }
+          .hisphoto6Div.element-show {
+            opacity: 1;
+            transition: all 1s;
+            transform: translateY(0%);
+          }
+          .block3{
+            position: relative;
+            display: flex;
+            flex-direction: column; 
+            min-height: 90vh;
+            opacity: 0;
+            transform: translateY(160px);
+          }
+          .block3.element-show {
+            opacity: 1;
+            transition: all 1s;
+            transform: translateY(0%);
+          }
+          .hisphoto9Div{
+            opacity: 0;
+            transform: translateY(160px);
+          }
+          .hisphoto9Div.element-show {
+            opacity: 1;
+            transition: all 1s;
+            transform: translateY(0%);
+          }
+          .hisphoto2Div{
+            position: absolute;
+            left: 80px;
+          }
+          .hisPhoto2{
+            width: 60%;
+          }
+          .hisphoto3Div{
+            position: absolute;
+            right: 13%;
+            top: 220px;
+            width: 25%;
+          }
+          .hisPhoto3{
+            width: 100%;
+          }
+          .hisPhoto3Txt{
+            width: 100%;
+            text-align: justify;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            line-height: 1.5;
+          }
+          .hisPhoto2Txt{
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            width: 60%;
+            line-height: 1.5;
+          }
+          .hisPhoto2, .hisPhoto3, .hisPhoto4, .hisPhoto5, .hisPhoto7{
+            margin-bottom: 20px;
+          }
+          .hisPhoto4{
+            width: 100%;
+          }
+          .hisPhoto5{
+            width: 100%;
+          }
+          .hisPhoto3h, .hisPhoto4h, .hisPhoto6h{
+            color: white;
+            font-family: bebra;
+            font-size: 50px;
+          }
+          .hisphoto4Div{
+            position: absolute;
+            left: 10%;
+            width: 40%;
+          }
+          .hisPhoto4Txt{
+            width: 100%;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+            text-align: justify;
+            margin-bottom: 30px;
+            line-height: 1.5;
+          }
+          .hisphoto5Div{
+            position: absolute;
+            right: 80px;
+            top: 390px;
+            width: 25%;
+          }
+          .hisPhoto5Txt{
+            width: 100%;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            text-align: justify;
+            line-height: 1.5;
+          }
+          .photoBigDiv6{
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+          }
+          .pp{
+            margin-right: 20px;
+            width: 50%;
+          }
+          .hisPhoto6{
+            width: 100%;
+          }
+          .hisPhoto6two{
+            width: 70%;
+          }
+          .hisphoto6Div{
+            margin-left: 80px;
+          }
+          .hisPhoto6Txt{
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            text-align: justify;
+            line-height: 1.5;
+            width: 60%;
+          }
+          .hisphoto7Div{
+            position: absolute;
+            right: 80px;
+            width: 25%;
+          }
+          .hisPhoto7Txt{
+            width: 100%;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            text-align: justify;
+            line-height: 1.5;
+          }
+          .hisPhoto7{
+            width: 100%;
+          }
+          .hisphoto8Div{
+            position: absolute;
+            left: 80px;
+            top: 30vh;
+            display: flex;
+            align-items: flex-end;
+            text-align: justify;
+            right: 80px;
+          }
+          .pppp{
+            margin-right: 20px;
+          }
+          .hisPhoto8Txt{
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            text-align: justify;
+            line-height: 1.5;
+          }
+          .hisphoto9Div{
+            position: absolute;
+            left: 80px;
+            right: 80px;
+          }
+          .photoBigDiv6{
+            width: 70%;
+          }
+          .hisPhoto9{
+            width: 100%;
+          }
+          .hisPhoto{
+            margin-bottom: 70vh;
+          }
+          .star{
+            height: 40px;
+            margin-left: 15px;
+          }
+          .strLeft{
+            height: 40px;
+            cursor: pointer;
+          }
+          .strRight{
+            height: 40px;
+            cursor: pointer;
+            transform: rotate(3.142rad);
+          }
+          .revTop{
+            display: flex;
+            justify-content: space-between;
+            font-family: bebra;
+            color: white;
+            font-size: 50px;
+            align-items: center;
+            margin-bottom: 30px;
+          }
+          .reviews{
+            text-align: center;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-bottom: 15vh;
+          }
+          .revStar{
+            display: flex;
+            align-items: center;
+          }
+          .revText{
+            font-family: bebra;
+            color: white;
+            font-size: 50px;
+            text-align:justify;
+            margin-bottom: 30px;
+            height: 250px;
+          }
+          .revBottom{
+            display: flex;
+            font-family: bebra;
+            color: white;
+            font-size: 55px;
+            justify-content: center;
+          }
+          .num{
+            margin-left: 10px;
+            margin-right: 10px;
+          }
+          .rightArrow{
+            height: 30px;
+          }
+          .subscribe{
+            margin-top: 150px;
+          }
+          .subTxt1, .subTxt2, .subTxt3{
+            font-family: bebra;
+            font-size: 128px;
+            color: white;
+          }
+          .subImgDiv{
+            width: 40%;
+          }
+          .subImg{
+            width: 100%;
+          }
+          .subTxt1{
+            margin-left: 80px;
+          }
+          .subTxt2{
+            margin-left: 80px;
+          }
+          .subTxt3{
+            margin-left: 300px;
+          }
+          .subForm{
+            display: flex;
+            margin-left: 10%;
+            justify-content: space-between;
+            margin-right: 80px;
+            align-items: end;
+            margin-bottom: 150px;
+          }
+          .www{
+            display: flex;
+            width: 70%;
+          }
+          .subInp{
+            width: 100%;
+            height: 70px;
+            background-color: #403f3f;
+            border-width: 0px;
+            padding-top: 5px;
+            padding-left: 20px;
+            color: white; 
+            font-family: bebra;
+            font-size: 50px;
+          }
+          .subInp::placeholder {
+            color: white; 
+            font-family: bebra;
+            font-size: 50px;
+          }
+          .subInp::-webkit-input-placeholder {
+            color: white; 
+            font-family: bebra;
+            font-size: 50px;
+          }
+          .subInp::-moz-placeholder {
+            color: white;
+            font-size: 50px;
+            font-family: bebra; 
+          }
+          .subInp:-ms-input-placeholder {
+            color: white; 
+            font-family: bebra;
+            font-size: 50px;
+          }
+          .rightArrowDiv{
+            height: 77px;
+            width: 75px;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+          }
+          .rightArrow{
+            width: 100%;
+            height: 65px;
+          }
+          .subEnter{
+            width: 100%;
+        }
+          .subEnterTxt{
+            margin-top: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            width: 100%;
+            line-height: 1.5;
+            font-size: 25px;
+          }
+          input:focus {
+              outline: none;
+          }
+          .footer{
+            background-color: black;
+            color: white;
+            padding-top: 150px;
+          }
+          .footTop{
+            display: flex;
+            justify-content: space-between;
+            margin-left: 80px;
+            margin-right: 80px;
+            margin-bottom: 100px;
+          }
+          .footLeft{
+            font-family: bebra;
+            color: white;
+            font-size: 128px;
+          }
+          .support, .footNum{
+            font-family: bebra;
+            color: white;
+            font-size: 64px;
+          }
+          .footNum{
+            margin-bottom: 60px;
+          }
+          .footTxt{
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            line-height: 1.5;
+            font-size: 25px;
+          }
+          .hours{
+            display: flex;
+            margin-top: 30px;
+          }
+          .hoursLeft{
+            margin-right: 10%;
+          }
+          .budni{
+            margin-bottom: 10px;
+          }
+          .flex2{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 80px;
+          }
+          .flex2right{
+            display: flex;
+            align-items: center;
+          }
+          .marshLogoFlex{
+            width: 50%;
+          }
+          .kaakshki{
+            margin-left: 100px;
+          }
+          .footTxtt{
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            line-height: 1.5;
+            margin-bottom: 8px;
+            font-size: 25px;
+          }
+          
+          /* PRODUCTS--------------------------------------------*/
+          
+          
+          /*HEADPHONES-----------------------------------------------------------*/
+          
+          .headerProductsHeadphones{
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            font-family: bebra;
+            font-size: 64px;
+            height: 90px;
+            align-items: center;
+          }
+          .headDiv, .speakersDiv, .ampsDiv{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            cursor: pointer;
+          }
+          .speakersDiv, .ampsDiv{
+            background-color: black;
+          }
+          .speakersDiv:hover{
+            font-size: 60px;
+          }
+          .ampsDiv:hover{
+            font-size: 60px;
+          }
+          .categoriesHeadphones{
+            display: flex;
+            justify-content: flex-start;
+            color: white;
+            font-family: bebra;
+            font-size: 36px;
+            margin-top: 30px;
+            margin-left: 70px;
+            margin-bottom: 30px;
+          }
+          .cat{
+            margin-right: 30px;
+            cursor: pointer;
+          }
+          .catCheck{
+            margin-right: 30px;
+            cursor: pointer;
+            text-decoration: underline;
+          }
+          .gridHeadphones{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            margin-left: 80px;
+            margin-right: 80px;
+          }
+          .gridHBlock3{
+            grid-column: 3/5;
+            grid-row: 1/3;
+          }
+          .block1Img, .block2Img, .block3Img{
+            width: 100%;
+          }
+          .gridHBlock1, .gridHBlock2, .gridHBlock3{
+            margin: 5px;
+          }
+          .blockTxtBig{
+            color: white;
+            font-family: bebra;
+            font-size: 50px;
+            cursor: pointer;
+            margin-left: 5px;
+          }
+          .blockTxtSmall{
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            line-height: 1.5;
+          }
+          .grid2Headphones{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            margin-left: 80px;
+            margin-right: 80px;
+            margin-top: 30px;
+            margin-bottom: 50px;
+          }
+          .grid2Block1Img{
+            width: 100%;
+          }
+          .grid2Block1ImgDiv{
+            margin: 5px;
+          }
+          .txtBottom{
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            line-height: 1.5;
+            margin-left: 80px;
+            width: 50%;
+            text-align: justify;
+            margin-bottom: 80px;
+          }
+          
+          /*SPeakers----------------------------------------------------------------------------*/
+          
+          .grid2Speakers{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            margin-left: 80px;
+            margin-right: 80px;
+            margin-top: 30px;
+            margin-bottom: 50px;
+          }
+          .grid2Block1S{
+            grid-column: 1/3;
+            grid-row: 1/3;
+          }
+          
+          /*CARDS----------------------------------------------------------*/
+          
+          .h1{
+            font-family: bebra;
+            color: white;
+            font-size: 128px;
+            margin-left: 80px;
+          }
+          .glavPhotoDiv{
+            display: flex;
+            margin-left: 80px;
+            margin-right: 80px;
+            margin-bottom: 40px;
+          }
+          .glavPhoto{
+            width: 100%;
+          }
+          .firstTxtBlock{
+            margin-left: 80px;
+          }
+          .hTxt{
+            color: white;
+            font-family: bebra;
+            font-size: 55px;
+          }
+          .mTxt{
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            line-height: 1.5;
+            width: 50%;
+          }
+          .cardGrid{
+            position: relative;
+            height: 350vh;
+          }
+          .bl1, .bl2, .bl3, .bl4, .bl5{
+           width: 600px;
+           position: absolute;
+          }
+          .photo{
+           width: 100%;
+          }
+          .hh{
+            color: white;
+            font-family: bebra;
+            font-size: 55px;
+          }
+          .txt{
+            font-size: 30px;
+            line-height: 1.5;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: justify;
+          }
+          .bl1{
+            right: 10%;
+            top: 80px;
+          }
+          .bl2{
+            left: 10%;
+            top: 450px;
+          }
+          .bl3{
+            right: 5%;
+            top: 120vh;
+          }
+          .bl4{
+            left: 15%;
+            top: 170vh;
+          }
+          .bl5{
+            right: 15%;
+            top: 250vh;
+          }
+          .Pl{
+            height: 15px;
+            cursor: pointer;
+          }
+          .str{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .productDetails{
+            margin-left: 20%;
+            margin-right: 80px;
+            margin-bottom: 80px;
+          }
+          .lStr{
+            color: white;
+            font-family: bebra;
+            font-size: 45px;
+          }
+          .buyGrid{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 70px 1fr;
+            margin-left: 20%;
+            margin-right: 80px;
+            margin-bottom: 80px;
+            height: 300px;
+          }
+          .strDiv{
+            height: 70px;
+          }
+          .strQ{
+            width: 70px;
+          }
+          .usa{
+            height: 70px;
+            background-color: #403f3f;
+            border-width: 0px;
+            padding-left: 20px;
+            color: white; 
+            font-family: bebra;
+            font-size: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 10px;
+          }
+          .qwe{
+            color: white; 
+            font-family: bebra;
+            font-size: 50px;
+            text-decoration: underline;
+          }
+          .sstr{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .infoDiv{
+            text-align: end;
+            justify-content: end;
+            margin-right: 80px;
+            height: 0; /* Начальное значение для скрытого состояния */
+            opacity: 0; /* Начальная непрозрачность */
+            overflow: hidden; /* Скрытие переполнения */
+            transition: height 0.5s ease, opacity 0.5s ease; /* Переходы для height и opacity */
+          }
+          .infoDiv.show {
+            height: auto; /* Высота при показе (должна быть фиксированной или заданной) */
+            opacity: 1; /* Полная непрозрачность */
+          }
+          .infA{
+            font-size: 25px;
+            line-height: 1.5;
+            color: #737272;
+            font-family: Arial, Helvetica, sans-serif;
+          }
+          .infB{
+            color: white; 
+            font-family: bebra;
+            font-size: 35px;
+            margin-bottom: 15px;
+          }
+          .infoCol1{
+            margin-right: 30px;
+          }
+          .strDiv{
+            cursor: pointer;
+          }
+          .spisok{
+            background-color: #737272;
+            color: black;
+            margin-right: 10px;
+          }
+          .qw{
+            font-family: bebra;
+            font-size: 50px;
+            padding-left: 20px;
+            cursor: pointer;
+          }
+          .qw:hover{
+            background-color: #2a292a;
+          }
+          .botLeft, .botRight{
+            margin-top: 30px;
+          }
+          .ppp{
+            display: flex;
+            justify-content: space-between;
+            margin: 80px;
+          }
+          .hz{
+            width: 95%;
+          }
+          
+          /*SIGN------------------------------------------------------------*/
+          
+          .spider{
+            width: 100%;
+            height: 98vh;
+          }
+          .spiderDiv{
+            position: relative;
+          }
+          .sign{
+            background-color: #403f3f;
+            height: 70vh;
+            width: 65%;
+            position: absolute;
+            top: 15vh;
+            left: 20%;
+            border-radius: 35px;
+            display: flex;
+            padding: 15px 0 15px 15px;
+          }
+          .aaaw{
+            position: relative;
+          }
+          .signLeft{
+            height: 100%;
+            border-radius: 35px;
+          }
+          .signRightDiv{
+            width: 100%;
+            margin-right: 5%;
+            margin-left: 5%;
+          }
+          .sTxt{
+            color: white; 
+            font-family: bebra;
+            font-size: 65px;
+            margin-top: 4vh;
+            margin-bottom: 20px;
+          }
+          .siTxt{
+            font-size: 25px;
+            line-height: 1.5;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+            margin-bottom: 4vh;
+          }
+          .siTxt:hover{
+            text-decoration: underline;
+            color: #220767;
+          }    
+          .signGrid{
+            display: flex;
+            height: 60px;
+          }
+          .signEmail{
+            width: 100%;
+            margin-top: 20px;
+            height: 60px;
+          }         
+          .signPass{
+            width: 100%;
+            margin-top: 20px;
+          }
+          .signName{
+            margin-right: 10px;
+            height: 60px;
+          }
+          .signInput{
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #2a292a;
+            border-width: 0px;
+            padding: 0;
+            padding-left: 10px;
+            padding-top: 3px;
+            color: white; 
+            font-family: bebra;
+            font-size: 40px;
+            height: 60px;
+          }
+          .signInput::placeholder {
+            color: rgb(149, 146, 146); 
+            font-family: bebra;
+            font-size: 40px;
+          }
+          .signInput::-webkit-input-placeholder {
+            color: rgb(149, 146, 146); 
+            font-family: bebra;
+            font-size: 40px;
+          }
+          .signInput::-moz-placeholder {
+            color: rgb(149, 146, 146);
+            font-size: 40px;
+            font-family: bebra; 
+          }
+          .signInput:-ms-input-placeholder {
+            color: rgb(149, 146, 146); 
+            font-family: bebra;
+            font-size: 40px;
+          }
+          .ok{
+            display: flex;
+            font-size: 30px;
+            line-height: 1.5;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 3vh;
+            margin-bottom: 4vh;
+          }
+          .chch{
+            accent-color: #2a292a;
+          }
+          .check{
+            margin-right: 10px;
+          }
+          .create{
+            width: 100%;
+            background-color: #737272;
+            cursor: pointer;
+            color: white; 
+            font-family: bebra;
+            font-size: 65px;
+            text-align: center;
+            padding: 15px;
+            box-sizing: border-box;
+          }
+          }
